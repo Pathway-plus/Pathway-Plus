@@ -1,4 +1,4 @@
-# Pathway-Plus
+# Pathway-Plus Myanmar
 # Website for making consultation appointments
  
  Web Development Team Leader - Yadanar Lin
