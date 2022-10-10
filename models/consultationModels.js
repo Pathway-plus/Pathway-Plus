@@ -4,26 +4,26 @@ const mongoose = require('mongoose');
 const consultantSchema = mongoose.Schema({
     name : {
         type: String,
-        require: true
+        required: true
     },
     profile : {
         type: String
     },
     country: {
         type: String,
-        require: true
+        required: true
     },
     university: {
         type: String,
-        require: true
+        required: true
     },
     specialization: {
         type: String,
-        require: true
+        required: true
     },
     year: {
         type: String,
-        require: true
+        required: true
     },
     introduction: {
         type: String
@@ -33,25 +33,25 @@ const consultantSchema = mongoose.Schema({
 const sessionSchema = mongoose.Schema({
     date : {
         type: Date,
-        require: true
+        required: true
     },
     startTime: {
         type: [String],
-        require: true
+        required: true
     },
     endTime: {
         type: [String],
-        require: true
+        required: true
     },
     is_available: {
         type: Boolean,
-        require: true,
+        required: true,
         default: true
     },
     consultant: {
         type: mongoose.SchemaTypes.ObjectId,
         ref: "consultant",
-        require: true
+        required: true
     }
 })
 

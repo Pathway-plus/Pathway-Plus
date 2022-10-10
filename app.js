@@ -34,6 +34,30 @@ app.get('/consultant/all', async (req,res)=>{
     res.json(allConsultants)
 })
 
+app.get('/consultant/:id', async (req,res)=>{
+    let consultantDetails;
+    try{
+        consultantDetails = await Consultant.where("_id").equals(req.params.id)
+    } catch(err) {
+        consultantDetails = null
+        res.status(404)
+    }
+    res.json(consultantDetails)
+})
+
+app.get('/consultant/:id/sessions', async (req,res)=>{
+    let consultantSessions;
+    try{
+        consultantSessions = await Session.where("consultant").equals(req.params.id)
+    } catch(err) {
+        consultantSessions = {
+            "error" : "consultant not found"
+        }
+        res.status(404)
+    }
+    res.json(consultantSessions)
+})
+
 
 // sample reqest body
 // {
