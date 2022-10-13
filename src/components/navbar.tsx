@@ -1,14 +1,14 @@
 const navbar: React.FC = () => {
   return (
-    <nav className="bg-white border-gray-200">
-      <div className="flex justify-around items-center">
+    <nav className="px-2 bg-white border-gray-200">
+      <div className="container flex flex-wrap justify-between items-center mx-auto">
         <a href="#" className="flex items-center">
           <span className="self-center text-xl font-semibold whitespace-nowrap">
             LOGO
           </span>
         </a>
 
-        {/* <button
+        <button
           data-collapse-toggle="mobile-menu"
           type="button"
           className="inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300"
@@ -29,10 +29,10 @@ const navbar: React.FC = () => {
               clip-rule="evenodd"
             ></path>
           </svg>
-        </button> */}
+        </button>
 
         <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
-          <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white md">
+          <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
             <li>
               <a href="/" className="nav-items" aria-current="page">
                 Home
@@ -42,7 +42,7 @@ const navbar: React.FC = () => {
               <button
                 id="dropdownNavbarLink"
                 data-dropdown-toggle="dropdownNavbar"
-                className="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-black rounded hover:text-orange-500 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto"
+                className="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-black rounded hover:text-orange-500 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto"
               >
                 Services{" "}
                 <svg
@@ -74,7 +74,7 @@ const navbar: React.FC = () => {
                 data-popper-placement="bottom"
               >
                 <ul
-                  className="py-1 text-sm text-gray-700"
+                  className="py-1 text-sm text-black"
                   aria-labelledby="dropdownLargeButton"
                 >
                   <li>
@@ -117,11 +117,6 @@ const navbar: React.FC = () => {
             </li>
           </ul>
         </div>
-        <a href="#" className="flex items-center">
-          <span className="self-center text-xl font-semibold whitespace-nowrap">
-            ICON
-          </span>
-        </a>
       </div>
     </nav>
   );
