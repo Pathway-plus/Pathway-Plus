@@ -117,6 +117,11 @@ const navbar: React.FC = () => {
             </li>
           </ul>
         </div>
+        <a href="#" className="flex items-center">
+          <span className="self-center text-xl font-semibold whitespace-nowrap">
+            ICON
+          </span>
+        </a>
       </div>
     </nav>
   );
