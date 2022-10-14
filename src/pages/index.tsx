@@ -10,13 +10,6 @@ const Home: NextPage = () => {
 				<meta name="description" content="Pathway Plus" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>	
-			<div className={styles.container}>
-			<header className={styles.header}>
-				<a>
-          Header
-				</a>
-			</header>
-		</div>
 			
 			<main className={styles.main}>
 				<h1 className={styles.title}>
@@ -68,11 +61,6 @@ const Home: NextPage = () => {
 				Our Consultants
 			</p>
 
-			<footer className={styles.footer}>
-				<a>
-          Footer
-				</a>
-			</footer>
 		</div>
 	);
 };
