@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 function Document() {
   return (
@@ -12,7 +13,10 @@ function Document() {
       <body>
         <Main />
         <NextScript />
-        <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+        <Script
+          src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"
+          strategy="beforeInteractive"
+        ></Script>
       </body>
     </Html>
   );

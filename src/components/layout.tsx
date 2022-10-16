@@ -8,7 +8,7 @@ interface Props {
 const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
-      <Navbar />
+      <Navbar></Navbar>
       <main>{children}</main>
       <Footer />
     </>

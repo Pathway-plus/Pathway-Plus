@@ -1,81 +1,70 @@
+import Image from "next/image";
+import Link from "next/link";
+
 const footer: React.FC = () => {
   return (
     <footer className="bg-orange-500">
       <div className="grid grid-cols-2 py-8 px-1 md:grid-cols-5">
-        <span>LOGO</span>
+        <div className="mb-4 lg:ml-5">
+          <Image
+            src="/assets/logo-white.png"
+            width={160}
+            height={160}
+            alt="logo"
+          />
+        </div>
         <div>
-          <ul className="text-white">
-            <li className="mb-4">
-              <a href="/" className="hover:underline">
-                Home
-              </a>
+          <ul className="text-white ml-5">
+            <li className="mb-4 hover:underline">
+              <Link href="/">Home</Link>
             </li>
-            <li className="mb-4">
-              <a href="#" className="hover:underline">
-                About Us
-              </a>
+            <li className="mb-4 hover:underline">
+              <Link href="/about-us">About Us</Link>
+            </li>
+            <li className="mb-4 hover:underline">
+              <Link href="/about-us">Careers</Link>
             </li>
           </ul>
         </div>
         <div>
-          <ul className="text-white">
-            <li className="mb-4">
-              <a href="#" className="hover:underline">
-                Proof-Reading
-              </a>
+          <ul className="text-white ml-5">
+            <li className="mb-4 hover:underline">
+              <Link href="#">Proof-Reading</Link>
             </li>
-            <li className="mb-4">
-              <a href="/consulting" className="hover:underline">
-                Consultation
-              </a>
+            <li className="mb-4 hover:underline">
+              <Link href="/consulting">Consultation</Link>
             </li>
-            <li className="mb-4">
-              <a href="#" className="hover:underline">
-                Events
-              </a>
+            <li className="mb-4 hover:underline">
+              <Link href="#">Events</Link>
             </li>
           </ul>
         </div>
         <div>
-          <ul className="text-white">
-            <li className="mb-4">
-              <a href="#" className="hover:underline">
-                Blogs
-              </a>
+          <ul className="text-white ml-5">
+            <li className="mb-4 hover:underline">
+              <Link href="#">Blogs</Link>
             </li>
-            <li className="mb-4">
-              <a href="#" className="hover:underline">
-                Contact Us
-              </a>
+            <li className="mb-4 hover:underline">
+              <Link href="#">Contact Us</Link>
             </li>
-            <li className="mb-4">
-              <a href="#" className="hover:underline">
-                Account Info
-              </a>
-            </li>
-            <li className="mb-4">
-              <a href="#" className="hover:underline">
-                Booking
-              </a>
+            {/* <li className="mb-4 hover:underline">
+              <Link href="#">Account Info</Link>
+            </li> */}
+            <li className="mb-4 hover:underline">
+              <Link href="#">Booking</Link>
             </li>
           </ul>
         </div>
         <div>
-          <ul className="text-white">
-            <li className="mb-4">
-              <a href="#" className="hover:underline">
-                Terms &amp; Conditions
-              </a>
+          <ul className="text-white ml-5">
+            <li className="mb-4 hover:underline">
+              <Link href="#">Terms &amp; Conditions</Link>
             </li>
-            <li className="mb-4">
-              <a href="#" className="hover:underline">
-                Privacy & Policy
-              </a>
+            <li className="mb-4 hover:underline">
+              <Link href="#">Privacy &amp; Policy</Link>
             </li>
-            <li className="mb-4">
-              <a href="#" className="hover:underline">
-                FAQs
-              </a>
+            <li className="mb-4 hover:underline">
+              <Link href="#">FAQs</Link>
             </li>
           </ul>
         </div>
