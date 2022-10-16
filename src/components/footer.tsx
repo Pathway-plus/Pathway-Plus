@@ -10,7 +10,7 @@ const footer: React.FC = () => {
             src="/assets/logo-white.png"
             width={160}
             height={160}
-            alt="logo"
+            alt="Pathway Plus Logo"
           />
         </div>
         <div>
@@ -19,10 +19,10 @@ const footer: React.FC = () => {
               <Link href="/">Home</Link>
             </li>
             <li className="mb-4 hover:underline">
-              <Link href="/about-us">About Us</Link>
+              <Link href="#">About Us</Link>
             </li>
             <li className="mb-4 hover:underline">
-              <Link href="/about-us">Careers</Link>
+              <Link href="#">Careers</Link>
             </li>
           </ul>
         </div>

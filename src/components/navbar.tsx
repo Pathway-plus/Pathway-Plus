@@ -11,7 +11,7 @@ const navbar: React.FC = () => {
               src="/assets/logo-orange.png"
               width={80}
               height={80}
-              alt="logo"
+              alt="Pathway Plus Logo"
             />
           </Link>
         </div>
