@@ -43,9 +43,10 @@ const Home: NextPage = () => {
 
 			
 	
-				<div className={styles.grid}>
-					<a href="/consulting">
-					<GiDiscussion />
+				<div className={styles.services}>
+			
+					<a href="/consulting" className={styles.card}>
+					<GiDiscussion className={styles.icon1}></GiDiscussion>
 						<h2>Consultation </h2>
 						<p>Learn More &rarr;</p>
 					</a>
@@ -53,7 +54,7 @@ const Home: NextPage = () => {
 					
 
 					<a href="https://nextjs.org/learn" className={styles.card}>
-						<AiOutlineFileSearch />
+						<AiOutlineFileSearch className={styles.icon2}/>
 						<h2>Proofreading </h2>
 						<p> Learn More &rarr;</p>
 					</a>
@@ -61,7 +62,7 @@ const Home: NextPage = () => {
 					<a
 						href="https://github.com/vercel/next.js/tree/canary/examples"
 						className={styles.card}>
-						<BiCalendarStar />
+						<BiCalendarStar className={styles.icon3}/>
 						<h2>Events </h2>
 						<p>Learn More &rarr;</p>
 					</a>
