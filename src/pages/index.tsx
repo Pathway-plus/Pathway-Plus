@@ -1,6 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import {GiDiscussion} from "react-icons/gi";
+import {AiOutlineFileSearch} from "react-icons/ai";
+import {BiCalendarStar} from "react-icons/bi";
 
 const Home: NextPage = () => {
 	return (
@@ -19,9 +22,11 @@ const Home: NextPage = () => {
 				<p className={styles.description}>Planning to study abroad? This is the right place for your goal!</p>
 				</div>
 				<div className={styles.grid}>
-					<a href="#" className={styles.card}>
-						<h2>Explore Now</h2>
-					</a>
+				<button className="w-40 py-3 rounded-lg text-white bg-orange-500 hover:bg-orange-600 shadow-[0_0px_10px_2px_rgba(0,0,0,0.25)] hover:shadow-[0_0px_10px_2px_rgba(0,0,0,0.05)] transition-all">
+				<a href="/consulting">
+				Explore Now
+				</a>
+				</button>
 				</div>
 
 				
@@ -36,23 +41,29 @@ const Home: NextPage = () => {
 				Our Services
 			</p>
 
+			
+	
 				<div className={styles.grid}>
-					<a href="/consulting" className={styles.card}>
-						<h2>Consultation &rarr;</h2>
-						<p>Find in-depth information about Next.js features and API.</p>
+					<a href="/consulting">
+					<GiDiscussion />
+						<h2>Consultation </h2>
+						<p>Learn More &rarr;</p>
 					</a>
+					
+					
 
 					<a href="https://nextjs.org/learn" className={styles.card}>
-						<h2>Proofreading &rarr;</h2>
-						<p>Learn about Next.js in an interactive course with quizzes!</p>
+						<AiOutlineFileSearch />
+						<h2>Proofreading </h2>
+						<p> Learn More &rarr;</p>
 					</a>
 
 					<a
 						href="https://github.com/vercel/next.js/tree/canary/examples"
-						className={styles.card}
-					>
-						<h2>Events &rarr;</h2>
-						<p>Discover and deploy boilerplate example Next.js projects.</p>
+						className={styles.card}>
+						<BiCalendarStar />
+						<h2>Events </h2>
+						<p>Learn More &rarr;</p>
 					</a>
 				</div>
 			</main>
