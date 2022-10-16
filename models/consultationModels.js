@@ -17,7 +17,7 @@ const consultantSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    specialization: {
+    major: {
         type: String,
         required: true
     },
@@ -27,6 +27,10 @@ const consultantSchema = mongoose.Schema({
     },
     introduction: {
         type: String
+    },
+    type: {
+        type : String,
+        default : "Private"
     }
 })
 
@@ -45,13 +49,16 @@ const sessionSchema = mongoose.Schema({
     },
     is_available: {
         type: Boolean,
-        required: true,
         default: true
     },
     consultant: {
         type: mongoose.SchemaTypes.ObjectId,
         ref: "consultant",
         required: true
+    },
+    weekly: {
+        type: Boolean,
+        default: false
     }
 })
 
