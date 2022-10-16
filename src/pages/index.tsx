@@ -69,9 +69,44 @@ const Home: NextPage = () => {
 				</div>
 			</main>
 
+			<div className="py-20 text-white text-center bg-orange-600 transition-all">
+
+				<span>
+					Events 50+ 
+				</span>
+				<span>
+					Volunteers 100+
+				</span>
+				<span>
+					Total Proofreading 500+
+				</span>
+
+
+			</div>
+
+			
+			<div>
 			<p className={styles.description}>
 				Our Consultants
+				<p>Find More Consultants &rarr;</p>
+				<p>pictures</p>
 			</p>
+			</div>
+
+			<div>
+			<p className={styles.description}>
+				Testimonials
+				<p>gird and pics</p>
+			</p>
+			</div>
+			
+			<div>
+			<p className={styles.description}>
+				Latest Blogs
+				<p>See More Blogs &rarr;</p>
+				<p>girds</p>
+			</p>
+			</div>
 
 		</div>
 	);

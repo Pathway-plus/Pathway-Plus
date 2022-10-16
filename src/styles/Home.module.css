@@ -133,3 +133,10 @@
   font-size: 50px;
   position: center;
 }
+
+.statsBar{
+  text-align: center;
+  padding: 3.5em;
+  background: #ffa700;
+  height:200px;
+}
