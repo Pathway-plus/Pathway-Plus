@@ -15,11 +15,11 @@ const Home: NextPage = () => {
 			</Head>	
 			
 			<main className={styles.main}>
-				<h1 className={styles.title}>
-          Welcome to Pathway Plus!
-				</h1>
+				<p className="text-xl text-left">
+          Welcome To </p><p className="text-2xl text-left"> Pathway Plus!
+				</p>
 				<div>
-				<p className={styles.description}>Planning to study abroad? This is the right place for your goal!</p>
+				<p className="py-5 text-sm">Planning to study abroad? This is the right place for your goal!</p>
 				</div>
 				<div className={styles.grid}>
 				<button className="w-40 py-3 rounded-lg text-white bg-orange-500 hover:bg-orange-600 shadow-[0_0px_10px_2px_rgba(0,0,0,0.25)] hover:shadow-[0_0px_10px_2px_rgba(0,0,0,0.05)] transition-all">
@@ -37,15 +37,16 @@ const Home: NextPage = () => {
 					<a href="/consulting/booking" className={styles.link}>bookings, </a>
 				</p>
 
-				<p className={styles.description}>
+				<p className="text-sm font-semibold text-center">
 				Our Services
 			</p>
+			<br />
 
 			
 	
-				<div className={styles.services}>
-			
-					<a href="/consulting" className={styles.card}>
+				<div className="px-5 py-5 grid grid-flow-col grid-rows-1 grid-cols-3 gap-8">
+		
+					<a href="/consulting" className="w-64 h-72 py-10 px-20 bg-white rounded shadow border-b">
 					<GiDiscussion className={styles.icon1}></GiDiscussion>
 						<h2>Consultation </h2>
 						<p>Learn More &rarr;</p>
@@ -86,7 +87,7 @@ const Home: NextPage = () => {
 
 			
 			<div>
-			<p className={styles.description}>
+			<p className="px-5 py-5 text-center font-semibold text-sm">
 				Our Consultants
 				<br />
 				Find More Consultants &rarr;
@@ -96,7 +97,7 @@ const Home: NextPage = () => {
 			</div>
 
 			<div>
-			<p className={styles.description}>
+			<p className="px-5 py-5 text-center font-semibold text-sm">
 				Testimonials
 				<br />
 				gird and pics
@@ -104,7 +105,7 @@ const Home: NextPage = () => {
 			</div>
 			
 			<div>
-			<p className={styles.description}>
+			<p className="px-5 py-5 text-center font-semibold text-sm">
 				Latest Blogs
 				<br />
 				See More Blogs &rarr;
