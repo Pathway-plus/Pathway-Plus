@@ -21,17 +21,8 @@
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
-        "indent": [
-            "error",
-            "tab"
-        ],
-        "quotes": [
-            "error",
-            "double"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ]
+        "indent": [ "error", 2 ],
+        "quotes": [ "error","double" ],
+        "semi": [ "error","always" ]
     }
 }
