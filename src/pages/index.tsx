@@ -88,23 +88,28 @@ const Home: NextPage = () => {
 			<div>
 			<p className={styles.description}>
 				Our Consultants
-				<p>Find More Consultants &rarr;</p>
-				<p>pictures</p>
+				<br />
+				Find More Consultants &rarr;
+				<br />
+				pictures
 			</p>
 			</div>
 
 			<div>
 			<p className={styles.description}>
 				Testimonials
-				<p>gird and pics</p>
+				<br />
+				gird and pics
 			</p>
 			</div>
 			
 			<div>
 			<p className={styles.description}>
 				Latest Blogs
-				<p>See More Blogs &rarr;</p>
-				<p>girds</p>
+				<br />
+				See More Blogs &rarr;
+				<br />
+				girds
 			</p>
 			</div>
 
