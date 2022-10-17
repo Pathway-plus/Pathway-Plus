@@ -13,20 +13,21 @@ const Home: NextPage = () => {
 				<meta name="description" content="Pathway Plus" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>	
-			
-			<main className={styles.main}>
-				<p className="text-xl text-left">
-          Welcome To </p><p className="text-2xl text-left"> Pathway Plus!
+			<div className="py-10">
+				<p className="px-10 text-xl text-left">
+          Welcome To </p><p className="px-10 py-3 text-2xl text-bold text-left"> Pathway Plus!
 				</p>
 				<div>
-				<p className="py-5 text-sm">Planning to study abroad? This is the right place for your goal!</p>
+				<p className=" px-10 py-5 text-xs">Planning to study abroad? This is the right <br/> place for your goal!</p>
+				<br />
 				</div>
-				<div className={styles.grid}>
-				<button className="w-40 py-3 rounded-lg text-white bg-orange-500 hover:bg-orange-600 shadow-[0_0px_10px_2px_rgba(0,0,0,0.25)] hover:shadow-[0_0px_10px_2px_rgba(0,0,0,0.05)] transition-all">
+				<div className="px-10">
+				<button className="w-48 py-3 rounded-lg text-white bg-orange-500 hover:bg-orange-600 shadow-[0_0px_10px_2px_rgba(0,0,0,0.25)] hover:shadow-[0_0px_10px_2px_rgba(0,0,0,0.05)] transition-all">
 				<a href="/consulting">
 				Explore Now
 				</a>
 				</button>
+				</div>
 				</div>
 
 				
@@ -44,31 +45,45 @@ const Home: NextPage = () => {
 
 			
 	
-				<div className="px-5 py-5 grid grid-flow-col grid-rows-1 grid-cols-3 gap-8">
+				<div className="px-5 py-5 grid grid-flow-col grid-rows-1 grid-cols-3 gap-4">
 		
-					<a href="/consulting" className="w-64 h-72 py-10 px-20 bg-white rounded shadow border-b">
+					<a href="/consulting">
+					<div className="w-54 h-40 bg-green-400 rounded-lg shadow-lg border-b">
 					<GiDiscussion className={styles.icon1}></GiDiscussion>
-						<h2>Consultation </h2>
-						<p>Learn More &rarr;</p>
+					</div>
+					<div className="w-54 h-40 bg-white rounded-lg shadow-lg border-b">
+						<p className = "text-sm text-center py-3 ">Consultation </p>
+						<br />
+						<p className = "text-xs text-center py-3 text-orange-600">Learn More &rarr;</p>
+					</div>	
 					</a>
 					
 					
 
-					<a href="https://nextjs.org/learn" className={styles.card}>
+					<a href="#">
+						<div className="w-54 h-40 bg-blue-500 rounded-lg shadow-lg border-b">
 						<AiOutlineFileSearch className={styles.icon2}/>
-						<h2>Proofreading </h2>
-						<p> Learn More &rarr;</p>
+						</div>
+						<div className="w-54 h-40 bg-white rounded-lg shadow-lg border-b">
+						<p className= "text-sm text-center py-3">Proofreading </p>
+						<br />
+						<p className = "text-xs text-center py-3 text-orange-600"> Learn More &rarr;</p>
+						</div>
 					</a>
 
-					<a
-						href="https://github.com/vercel/next.js/tree/canary/examples"
-						className={styles.card}>
+					<a href="#">
+						<div className = "w-54 h-40 bg-purple-500 rounded-lg shadow-lg border-b">
 						<BiCalendarStar className={styles.icon3}/>
-						<h2>Events </h2>
-						<p>Learn More &rarr;</p>
+						</div>
+						<div className="w-54 h-40 bg-white rounded-lg shadow-lg border-b">
+						<p className= "text-sm text-center py-3">Events </p>
+						<br />
+						<p className = "text-xs text-center py-3 text-orange-600">Learn More &rarr;</p>
+						</div>
 					</a>
 				</div>
-			</main>
+		
+		
 
 			<div className="py-20 text-white text-center bg-orange-600 transition-all">
 
