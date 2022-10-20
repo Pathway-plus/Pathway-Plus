@@ -7,15 +7,13 @@
  
  Full Stack - Yadanar Lin, Phone Myat Kyaw
  
- Frontend - Sithu Soe
- 
  Backend - Than Htike Zaw, Thuta Ye Aung
  
  # Workflow
  
  Frontend - React
  
- Backend - Node JS
+ Backend - Node JS/ Next JS
  
  Database - Mongo DB
  
