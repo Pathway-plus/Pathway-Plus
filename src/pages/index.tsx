@@ -85,18 +85,19 @@ const Home: NextPage = () => {
 		
 		
 
-			<div className="py-20 text-white text-center bg-orange-600 transition-all">
-
-				<span>
-					Events 50+ 
-				</span>
-				<span>
-					Volunteers 100+
-				</span>
-				<span>
-					Total Proofreading 500+
-				</span>
-
+			<div className="h-32 bg-orange-500 text-white px-4 flex flex-row items-center">
+					<p className="text-center text-sm border-r-2 basis-1/3"> Events 
+					<br />
+					<p className="py-3 text-xl">50+</p>
+					</p>
+					<p className="text-center text-sm border-r-2 basis-1/3" > Volunteers
+					<br /> 
+					<p className="py-3 text-xl">100+</p>
+					</p>
+					<p className="text-center text-sm basis-1/3" > Total Proofreading
+					<br /> 
+					<p className="py-3 text-xl">500+</p>
+					</p>
 
 			</div>
 
