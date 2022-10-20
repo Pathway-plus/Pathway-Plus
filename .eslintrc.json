@@ -21,9 +21,10 @@
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
+		"@next/next/no-page-custom-font": "off",
         "indent": [
             "error",
-            "tab"
+            "off"
         ],
         "quotes": [
             "error",
