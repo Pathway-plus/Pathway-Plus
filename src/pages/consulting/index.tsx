@@ -1,41 +1,45 @@
-import type { GetServerSideProps, NextPage } from "next";
-import { FormEventHandler, useState } from "react";
+import type { NextPage } from "next";
+import { FormEventHandler, useState, useEffect, ReactEventHandler, Dispatch, SetStateAction } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import useConsultants from "../../hooks/useConsultants";
 
 type ServerSideProps = {
 	consultants: Consultant[];
 };
 
-export const getStaticProps : GetServerSideProps<ServerSideProps> = async () => {
-  try {
-    const response = await fetch(`${process.env.API_URL}/consultant/all`, { method: "GET" });
-    if (response.status < 200 || response.status >= 300) return { notFound: true };
-    const responseData = await response.json();
-    return { props: { consultants: responseData } };
-  } catch (e) {
-    return { notFound: true };
-  }
-};
-
+const skeletonData = [{}, {}, {}] as Consultant[];
 const tempPlaceholderCountries = [
   "Myanmar",
   "Japan",
   "Thailand",
 ];
 
-const Consulting: NextPage<ServerSideProps> = ({ consultants }: ServerSideProps) => {
+const Consulting: NextPage<ServerSideProps> = () => {
   const [filter, setFilter] = useState("");
-  // const [country, setCountry] = useState("");
-  const filteredConsultants = consultants.filter((data) => data.name.toLowerCase().includes(filter));
+  const [name, setName] = useState("");
+  const [page, setPage] = useState(1);
+  const [country, setCountry] = useState("");
+  const { loading, totalPages, consultants, getConsultants } = useConsultants();
 
-  const search : FormEventHandler<HTMLFormElement> = (e) => {
+  const consultantsData = loading ? skeletonData : consultants;
+  const noConsultantsFound = consultants.length === 0 && loading === false;
+
+  useEffect(() => {
+    getConsultants({ page, name, country });
+  }, [page, name, country]);
+
+  const filterName : FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     const searchElem = document.getElementById("search") as HTMLInputElement;
     if (searchElem === null) return;
-    const query = searchElem.value;
+    setName(searchElem.value);
+  };
 
-    setFilter(query.toLowerCase());
+  const filterCountry : ReactEventHandler<HTMLSelectElement> = () => {
+    const selectElem = document.getElementById("select_country") as HTMLSelectElement;
+    if (selectElem === null) return;
+    setCountry(selectElem.value);
   };
 
   return (
@@ -50,12 +54,12 @@ const Consulting: NextPage<ServerSideProps> = ({ consultants }: ServerSideProps)
 						feugiat eu.
           </p>
           <div className="flex w-full">
-            <form className="flex flex-1" onSubmit={search}>
+            <form className="flex flex-1" onSubmit={filterName}>
               <input type="search" name="search" id="search" placeholder="Search your consultants" className="flex-1 px-3 py-1.5 outline-none rounded-l-md bg-slate-200" />
               {/* Replace emoji with vector icon */}
               <button type="submit" className="w-10 mr-2 bg-primary-light hover:bg-primary transition-colors rounded-r-md">🔎</button>
             </form>
-            <select className="px-1 bg-slate-200 text-primary font-semibold">
+            <select onChange={filterCountry} id="select_country" className="px-1 bg-slate-200 text-primary font-semibold">
               <option disabled value="">Choose country</option>
               {tempPlaceholderCountries.map(country => <option key={country} value={country}>{country}</option>)}
             </select>
@@ -66,10 +70,13 @@ const Consulting: NextPage<ServerSideProps> = ({ consultants }: ServerSideProps)
       <div>
         <h1 className="text-center text-3xl font-semibold">Meet Our Consultants</h1>
         <div className="flex flex-wrap justify-center">
-          {filteredConsultants.map((data) => (
-            <Card key={data._id} data={data} />
-          ))}
+          {noConsultantsFound 
+            ? <p className="py-36">No consultants found...</p> 
+            : (consultantsData).map((data) => (
+              <Card key={data._id} data={data} />
+            ))}
         </div>
+        <PageNavigation currentPage={page} totalPages={totalPages} setPage={setPage} />
       </div>
     </div>
   );
@@ -81,8 +88,8 @@ const Card = ({ data } : { data: Consultant }) => {
     // makeBooking(data.id)
   };
 
-  return (
-    <Link  href={{ pathname: `/consulting/${data._id}` }}>
+  return data._id !== undefined ? (
+    <Link href={{ pathname: `/consulting/${data._id}` }}>
       <div className="group active:scale-105 flex flex-col w-72 px-10 py-4 m-6 mt-20 space-y-4 items-center rounded-lg cursor-pointer shadow-[0_0px_10px_2px_rgba(0,0,0,0.2)] hover:shadow-[0_0px_15px_3px_rgba(0,0,0,0.25)] active:shadow-[0_0px_15px_2px_rgba(0,0,0,0.1)] transition-all">
         <div className="group-hover:scale-105 transition-transform relative -mt-20 w-36 h-36">
           {/* <Image src={data.profile} layout="fill" alt={`Picture of ${data.name}`}  className="object-cover rounded-full" /> */}
@@ -99,6 +106,32 @@ const Card = ({ data } : { data: Consultant }) => {
         </button>
       </div>
     </Link>
+  ) : (<div className="flex w-72 h-80 m-6 mt-20 rounded-lg cursor-pointer shadow-[0_0px_10px_2px_rgba(0,0,0,0.2)]" />);
+};
+
+const PageNavigation = ({ currentPage, totalPages, setPage }: { currentPage:number, totalPages: number, setPage: Dispatch<SetStateAction<number>>}) => {
+  const pages = Array.from(Array(totalPages).keys());
+
+  const prevPage = () => currentPage > 1 && setPage(currentPage => currentPage - 1);
+  const nextPage = () => currentPage < totalPages && setPage(currentPage => currentPage + 1);
+
+  const buttonClassName = "flex w-10 h-10 justify-center items-center text-center border-2 border-gray-500 rounded-md";
+
+  return (
+    <div className="flex flex-row px-12 space-x-2 mb-6">
+      <button onClick={prevPage} className={buttonClassName}><p>{"<"}</p></button>
+      {pages.map((page) => { 
+        const isCurrent = currentPage === page + 1;
+        return <button 
+          onClick={() => setPage(page + 1)} 
+          key={page} 
+          className={`${buttonClassName} ${isCurrent && "bg-primary border-0"}`}>
+          <p className={isCurrent ? "text-white" : ""}>{page + 1}</p>
+        </button>;
+      }
+      )}
+      <button onClick={nextPage} className={buttonClassName}><p>{">"}</p></button>
+    </div>
   );
 };
 
