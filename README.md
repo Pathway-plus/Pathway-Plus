@@ -5,9 +5,7 @@
  
  # Role Assignments 
  
- Full Stack - Yadanar Lin, Phone Myat Kyaw
- 
- Backend - Than Htike Zaw, Thuta Ye Aung
+ Developers - Yadanar Lin, Phone Myat Kyaw, Than Htike Zaw, Thuta Ye Aung
  
  # Workflow
  
