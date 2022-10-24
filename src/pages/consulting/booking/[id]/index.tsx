@@ -1,16 +1,11 @@
 import type {  NextPage } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { FormEventHandler } from "react";
 
 const ConsultantDetail: NextPage = () => {
   const router = useRouter();
-  const { id } = router.query as unknown as string;
+  const id = router.query.id as unknown as string;
   
-  const onClick : FormEventHandler<HTMLButtonElement> = (e) => {
-    e.preventDefault();
-  };
-	
   return (
     <div>
       <div className="group relative flex justify-center bg-black bg-opacity-50">
