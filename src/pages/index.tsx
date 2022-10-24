@@ -108,7 +108,17 @@ const Home: NextPage = () => {
 				<br />
 				Find More Consultants &rarr;
 				<br />
-				pictures
+				<div className="m-6 grid grid-rows-2 grid-cols-4 gap-y-2 justify-items-c place-items-center">
+				<div><img src = "/assets/hninOoWai.jpg"  alt="" className="h-32 w-32 rounded-sm"></img></div>
+				<div><img src = "/assets/hninOoWai.jpg"  alt="" className="h-32 w-32 rounded-sm"></img></div>
+				<div><img src = "/assets/hninOoWai.jpg"  alt="" className="h-32 w-32 rounded-sm"></img></div>
+				<div><img src = "/assets/hninOoWai.jpg"  alt="" className="h-32 w-32 rounded-sm"></img></div>
+				<div><img src = "/assets/hninOoWai.jpg"  alt="" className="h-32 w-32 rounded-sm"></img></div>
+				<div><img src = "/assets/hninOoWai.jpg"  alt="" className="h-32 w-32 rounded-sm"></img></div>
+				<div><img src = "/assets/hninOoWai.jpg"  alt="" className="h-32 w-32 rounded-sm"></img></div>
+
+				</div>
+			
 			</p>
 			</div>
 
