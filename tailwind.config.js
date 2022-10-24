@@ -15,6 +15,11 @@ module.exports = {
         "green": "#33D670",
         "yellow": "#FADD35",
       },
+      boxShadow: {
+        "default": "0 0px 10px 2px rgba(0,0,0,0.2)",
+        "expand": "0 0px 15px 3px rgba(0,0,0,0.25)",
+        "shrink": "0 0px 15px 2px rgba(0,0,0,0.1)",
+      },
     },
   },
   plugins: [],

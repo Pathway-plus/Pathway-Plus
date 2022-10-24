@@ -16,7 +16,6 @@ const tempPlaceholderCountries = [
 ];
 
 const Consulting: NextPage<ServerSideProps> = () => {
-  const [filter, setFilter] = useState("");
   const [name, setName] = useState("");
   const [page, setPage] = useState(1);
   const [country, setCountry] = useState("");
@@ -83,14 +82,9 @@ const Consulting: NextPage<ServerSideProps> = () => {
 };
 
 const Card = ({ data } : { data: Consultant }) => {
-  const onClick : FormEventHandler<HTMLButtonElement> = (e) => {
-    e.preventDefault();
-    // makeBooking(data.id)
-  };
-
   return data._id !== undefined ? (
     <Link href={{ pathname: `/consulting/${data._id}` }}>
-      <div className="group active:scale-105 flex flex-col w-72 px-10 py-4 m-6 mt-20 space-y-4 items-center rounded-lg cursor-pointer shadow-[0_0px_10px_2px_rgba(0,0,0,0.2)] hover:shadow-[0_0px_15px_3px_rgba(0,0,0,0.25)] active:shadow-[0_0px_15px_2px_rgba(0,0,0,0.1)] transition-all">
+      <div className="group active:scale-105 flex flex-col w-72 px-10 py-4 m-6 mt-20 space-y-4 items-center rounded-lg cursor-pointer shadow-default hover:shadow-expand active:shadow-shrink transition-all">
         <div className="group-hover:scale-105 transition-transform relative -mt-20 w-36 h-36">
           {/* <Image src={data.profile} layout="fill" alt={`Picture of ${data.name}`}  className="object-cover rounded-full" /> */}
           <Image src={"/assets/man.png"} layout="fill" alt={`Picture of ${data.name}`}  className="object-cover rounded-full" />
@@ -101,12 +95,14 @@ const Card = ({ data } : { data: Consultant }) => {
           <li>{data.university}</li>
           <li>{data.major}</li>
         </ul>
-        <button onClick={onClick} className="w-28 py-3 rounded-lg text-white bg-primary-light hover:bg-primary shadow-[0_0px_10px_2px_rgba(0,0,0,0.25)] hover:shadow-[0_0px_10px_2px_rgba(0,0,0,0.05)] transition-all">
-					Book Now
-        </button>
+        <Link href={{ pathname: `/consulting/booking/${data._id}` }}>
+          <button className="w-28 py-3 rounded-lg text-white bg-primary-light hover:bg-primary shadow-default hover:shadow-shrink transition-all">
+            Book Now
+          </button>
+        </Link>
       </div>
     </Link>
-  ) : (<div className="flex w-72 h-80 m-6 mt-20 rounded-lg cursor-pointer shadow-[0_0px_10px_2px_rgba(0,0,0,0.2)]" />);
+  ) : (<div className="flex w-72 h-80 m-6 mt-20 rounded-lg cursor-pointer shadow-default" />);
 };
 
 const PageNavigation = ({ currentPage, totalPages, setPage }: { currentPage:number, totalPages: number, setPage: Dispatch<SetStateAction<number>>}) => {
