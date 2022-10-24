@@ -1,12 +1,20 @@
+import Image from "next/image";
+import Link from "next/link";
+
 const navbar: React.FC = () => {
   return (
-    <nav className="px-2 bg-white border-gray-200">
-      <div className="container flex flex-wrap justify-between items-center mx-auto">
-        <a href="#" className="flex items-center">
-          <span className="self-center text-xl font-semibold whitespace-nowrap">
-            LOGO
-          </span>
-        </a>
+    <nav className="bg-white border-gray-200">
+      <div className="container flex flex-wrap justify-between items-center mx-auto px-2">
+        <div className="cursor-pointer lg:ml-7">
+          <Link href="/">
+            <Image
+              src="/assets/logo-orange.png"
+              width={80}
+              height={80}
+              alt="Pathway Plus Logo"
+            />
+          </Link>
+        </div>
 
         <button
           data-collapse-toggle="mobile-menu"
@@ -24,19 +32,17 @@ const navbar: React.FC = () => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             ></path>
           </svg>
         </button>
 
         <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
           <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
-            <li>
-              <a href="/" className="nav-items" aria-current="page">
-                Home
-              </a>
+            <li className="nav-items">
+              <Link href="/">Home</Link>
             </li>
             <li>
               <button
@@ -53,9 +59,9 @@ const navbar: React.FC = () => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               </button>
@@ -77,43 +83,29 @@ const navbar: React.FC = () => {
                   className="py-1 text-sm text-black"
                   aria-labelledby="dropdownLargeButton"
                 >
-                  <li>
-                    <a href="/consulting" className="dropdown-items">
-                      Consultation
-                    </a>
+                  <li className="dropdown-items">
+                    <Link href="/consulting">Consultation</Link>
                   </li>
-                  <li>
-                    <a href="#" className="dropdown-items">
-                      Proofreading
-                    </a>
+                  <li className="dropdown-items">
+                    <Link href="#">Proofreading</Link>
                   </li>
-                  <li>
-                    <a href="#" className="dropdown-items">
-                      Events
-                    </a>
+                  <li className="dropdown-items">
+                    <Link href="#">Events</Link>
                   </li>
                 </ul>
               </div>
             </li>
-            <li>
-              <a href="#" className="nav-items">
-                About Us
-              </a>
+            <li className="nav-items">
+              <Link href="#">About Us</Link>
             </li>
-            <li>
-              <a href="#" className="nav-items">
-                Blog
-              </a>
+            <li className="nav-items">
+              <Link href="#">Blog</Link>
             </li>
-            <li>
-              <a href="#" className="nav-items">
-                Career
-              </a>
+            <li className="nav-items">
+              <Link href="#">Careers</Link>
             </li>
-            <li>
-              <a href="#" className="nav-items">
-                Contact Us
-              </a>
+            <li className="nav-items">
+              <Link href="#">Contact Us</Link>
             </li>
           </ul>
         </div>
