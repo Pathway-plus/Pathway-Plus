@@ -1,11 +1,30 @@
-import type { NextPage } from "next";
+import type {NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import {GiDiscussion} from "react-icons/gi";
 import {AiOutlineFileSearch} from "react-icons/ai";
 import {BiCalendarStar} from "react-icons/bi";
+import Image from "next/image";
+import Link from "next/link";
+import useConsultants from "../hooks/useConsultants";
+import { FormEventHandler, useState, useEffect, ReactEventHandler, Dispatch, SetStateAction } from "react";
 
-const Home: NextPage = () => {
+type ServerSideProps = {
+	consultant: Consultant;
+};
+
+// {JSON.stringify(consultantsData)}
+
+const skeletonData = [{}, {}, {}] as Consultant[];
+
+const Home:NextPage<ServerSideProps> = () => {
+	const { loading, consultants, getConsultants} = useConsultants();
+	const consultantsData = loading ? skeletonData : consultants;	
+	const noConsultantsFound = consultants.length === 0 && loading === false;
+	useEffect(() => {
+		getConsultants();
+	  }, []);
+	
   return (
     <div className={styles.container}>
       <Head>
@@ -30,7 +49,6 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-        
 
       <p className={styles.description}>
           Links: {" "}
@@ -103,23 +121,26 @@ const Home: NextPage = () => {
         </p>
 
       </div>
-
-			
 			<div>
 			<p className="px-5 py-5 text-center font-semibold text-sm">
 				Our Consultants
 				<br />
-				Find More Consultants &rarr;
-				<br />
-				pictures
+				<p className = "text-xs text-center py-3 text-orange-600">Find More Consultants &rarr;</p>
 			</p>
-			</div>
+				<div className="grid grid-rows-2 grid-flow-col m-12 center">
+          {noConsultantsFound 
+            ? <p className="py-36">No consultants found...</p> 
+            : (consultantsData).map((data) => (
+              <CardImage key={data._id} data={data} />
+            ))}
+        </div>
+
+
 
       <div>
         <p className="px-5 py-5 text-center font-semibold text-sm">
           Testimonials
           <br />
-          gird and pics
         </p>
       </div>
       
@@ -127,14 +148,33 @@ const Home: NextPage = () => {
         <p className="px-5 py-5 text-center font-semibold text-sm">
           Latest Blogs
           <br />
-          See More Blogs &rarr;
-          <br />
-          girds
+          <p className = "text-xs text-center py-3 text-orange-600"> See More Blogs &rarr;
+          <br /></p>
         </p>
       </div>
 
     </div>
+	</div>
   );
 };
+
+const CardImage= ({ data } : { data: Consultant }) => {
+	return(
+		<div className=" m-8 items-center w-36 h- 32">
+	<Link href={{ pathname: `/consulting/${data._id}` }} passHref>
+			<div>
+	<Image src="" layout="fill"/>
+    <div className="p-5">
+            <p className="mb-2 font-light text-xs text-gray-900 dark:text-white">{data.name}</p>
+
+        <p className="mb-3 text-2xs text-gray-700 dark:text-gray-200">{data.major}</p>
+    </div>
+</div>
+		</Link>
+		</div>
+	);
+}
+
+
 
 export default Home;
