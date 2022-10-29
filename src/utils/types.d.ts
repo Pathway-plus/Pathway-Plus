@@ -1,12 +1,23 @@
 interface Consultant {
-    "_id": string,
-    "name": string,
-    "profile": string,
-    "country": string,
-    "university": string,
-    "major": string,
-    "year": string,
-    "introduction": string,
-    "type": string,
-    "__v": number,
+  "_id": string,
+  "name": string,
+  "profile": string,
+  "country": string,
+  "university": string,
+  "major": string,
+  "year": string,
+  "introduction": string,
+  "type": string,
+  "__v": number,
+}
+
+interface Session {
+  "_id": string
+  "date": string
+  "startTime": Array<string>,
+  "endTime": Array<string>,
+  "is_available": boolean,
+  "consultant": string,
+  "weekly": boolean,
+  "__v": number,
 }

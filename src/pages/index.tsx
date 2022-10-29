@@ -7,7 +7,7 @@ import {BiCalendarStar} from "react-icons/bi";
 import Image from "next/image";
 import Link from "next/link";
 import useConsultants from "../hooks/useConsultants";
-import { FormEventHandler, useState, useEffect, ReactEventHandler, Dispatch, SetStateAction } from "react";
+import {useEffect} from "react";
 
 type ServerSideProps = {
 	consultant: Consultant;
@@ -22,10 +22,9 @@ const Home:NextPage<ServerSideProps> = () => {
 	const consultantsData = loading ? skeletonData : consultants;	
 	const noConsultantsFound = consultants.length === 0 && loading === false;
 	useEffect(() => {
-		getConsultants();
-	  }, []);
+		getConsultants();}, []);
 	
-  	return (
+  return (
     <div className={styles.container}>
       <Head>
         <title>Pathway Plus</title>
@@ -156,7 +155,7 @@ const CardImage= ({ data } : { data: Consultant }) => {
 		</Link>
 		</div>
 	);
-}
+};
 
 
 
