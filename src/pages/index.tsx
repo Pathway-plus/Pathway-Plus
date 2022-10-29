@@ -25,7 +25,7 @@ const Home:NextPage<ServerSideProps> = () => {
 		getConsultants();
 	  }, []);
 	
-  return (
+  	return (
     <div className={styles.container}>
       <Head>
         <title>Pathway Plus</title>
@@ -48,19 +48,6 @@ const Home:NextPage<ServerSideProps> = () => {
           </button>
         </div>
       </div>
-
-
-      <p className={styles.description}>
-          Links: {" "}
-        <a href="/consulting" className={styles.link}>consulting, </a>
-        <a href="/consulting/booking" className={styles.link}>bookings, </a>
-      </p>
-
-      <p className="text-sm font-semibold text-center">
-        Our Services
-      </p>
-      <br />
-
       
   
       <div className="px-5 py-5 grid grid-flow-col grid-rows-1 grid-cols-3 gap-4">
@@ -162,14 +149,10 @@ const CardImage= ({ data } : { data: Consultant }) => {
 	return(
 		<div className=" m-8 items-center w-36 h- 32">
 	<Link href={{ pathname: `/consulting/${data._id}` }} passHref>
-			<div>
-	<Image src="" layout="fill"/>
     <div className="p-5">
-            <p className="mb-2 font-light text-xs text-gray-900 dark:text-white">{data.name}</p>
-
-        <p className="mb-3 text-2xs text-gray-700 dark:text-gray-200">{data.major}</p>
-    </div>
-</div>
+        <div className="mb-2 text-xs text-gray-900 dark:text-white">{data.name}</div>
+        <div className="mb-3 text-2xs text-gray-700 dark:text-gray-200">{data.major}</div>
+		</div>
 		</Link>
 		</div>
 	);
