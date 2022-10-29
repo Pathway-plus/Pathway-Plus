@@ -1,30 +1,26 @@
 import type { GetServerSideProps, NextPage } from "next";
 import Image from "next/image";
-import { FormEventHandler } from "react";
+import Link from "next/link";
 
 type ServerSideProps = {
 	consultant: Consultant;
+  id: string;
 };
 
 export const getServerSideProps : GetServerSideProps<ServerSideProps> = async (context) => {
-  const id = context.query.id;
+  const id = context.query.id as unknown as string;
   // This is returning 304 NOT MODIFIED
   try {
     const response = await fetch(`${process.env.API_URL}/consultant/${id}`, { method: "GET" });
     if (response.status < 200 || response.status >= 400) return { notFound: true };
     const responseData = await response.json();
-    return { props: { consultant: responseData[0] } };
+    return { props: { consultant: responseData[0], id } };
   } catch (e) {
     return { notFound: true };
   }
 };
 
-const ConsultantDetail: NextPage<ServerSideProps> = ({ consultant }: ServerSideProps) => {
-  const onClick : FormEventHandler<HTMLButtonElement> = (e) => {
-    e.preventDefault();
-    // makeBooking(data.id)
-  };
-	
+const ConsultantDetail: NextPage<ServerSideProps> = ({ consultant, id }: ServerSideProps) => {
   return (
     <div>
       <div className="group relative flex justify-center bg-black bg-opacity-50">
@@ -51,9 +47,11 @@ const ConsultantDetail: NextPage<ServerSideProps> = ({ consultant }: ServerSideP
           </ol>
           <h3 className="font-semibold text-lg mb-6">Introduction</h3>
           <p className="mb-12">{consultant.introduction}</p>
-          <button onClick={onClick} className="w-80 py-3 rounded-lg text-white bg-primary-light hover:bg-primary shadow-[0_0px_10px_2px_rgba(0,0,0,0.25)] hover:shadow-[0_0px_10px_2px_rgba(0,0,0,0.05)] transition-all">
-						Make Appointment
-          </button>
+          <Link href={{ pathname: `/consulting/booking/${id}` }}>
+            <button className="w-80 py-3 rounded-lg text-white bg-primary-light hover:bg-primary shadow-default hover:shadow-shrink transition-all">
+              Make Appointment
+            </button>
+          </Link>
         </div>
       </div>
     </div>

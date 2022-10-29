@@ -23,6 +23,7 @@
         "react/react-in-jsx-scope": "off",
         "indent": "off",
         "quotes": [ "error","double" ],
-        "semi": [ "error","always" ]
+        "semi": [ "error","always" ],
+        "@typescript-eslint/no-explicit-any": "off"
     }
 }
