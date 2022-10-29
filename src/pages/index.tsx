@@ -7,7 +7,7 @@ import {BiCalendarStar} from "react-icons/bi";
 import Image from "next/image";
 import Link from "next/link";
 import useConsultants from "../hooks/useConsultants";
-import { FormEventHandler, useState, useEffect, ReactEventHandler, Dispatch, SetStateAction } from "react";
+import {useEffect} from "react";
 
 type ServerSideProps = {
 	consultant: Consultant;
