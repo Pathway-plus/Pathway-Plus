@@ -53,7 +53,9 @@ const Home:NextPage<ServerSideProps> = () => {
     
         <a href="/consulting">
           <div className="w-54 h-40 bg-green-400 rounded-lg shadow-lg border-b">
-            <GiDiscussion className={styles.icon1}></GiDiscussion>
+			<br />
+			<br />
+            <GiDiscussion className="md:flex w-11/12 mx-1 my-2 h-10 text-center text-white"></GiDiscussion>
           </div>
           <div className="w-54 h-40 bg-white rounded-lg shadow-lg border-b">
             <p className = "text-sm text-center py-3 ">Consultation </p>
@@ -66,7 +68,9 @@ const Home:NextPage<ServerSideProps> = () => {
 
         <a href="#">
           <div className="w-54 h-40 bg-blue-500 rounded-lg shadow-lg border-b">
-            <AiOutlineFileSearch className={styles.icon2}/>
+			<br />
+			<br />
+            <AiOutlineFileSearch className="md:flex w-11/12 mx-2 my-2 h-10 text-center text-white"/>
           </div>
           <div className="w-54 h-40 bg-white rounded-lg shadow-lg border-b">
             <p className= "text-sm text-center py-3">Proofreading </p>
@@ -76,8 +80,10 @@ const Home:NextPage<ServerSideProps> = () => {
         </a>
 
         <a href="#">
-          <div className = "w-54 h-40 bg-purple-500 rounded-lg shadow-lg border-b">
-            <BiCalendarStar className={styles.icon3}/>
+          <div className = "w-54 h-40 bg-purple-500 rounded-lg shadow-lg border-b ">
+			<br />
+			<br />
+		   <BiCalendarStar className="md:flex w-11/12 mx-2 my-2 h-10 text-center text-white"/>
           </div>
           <div className="w-54 h-40 bg-white rounded-lg shadow-lg border-b">
             <p className= "text-sm text-center py-3">Events </p>
@@ -111,7 +117,7 @@ const Home:NextPage<ServerSideProps> = () => {
 			<p className="px-5 py-5 text-center font-semibold text-sm">
 				Our Consultants
 				<br />
-				<p className = "text-xs text-center py-3 text-orange-600">Find More Consultants &rarr;</p>
+				<span className = "text-xs text-center py-3 text-orange-600">Find More Consultants &rarr;</span>
 			</p>
 				<div className="grid grid-rows-2 grid-flow-col m-12 center">
           {noConsultantsFound 
@@ -130,14 +136,6 @@ const Home:NextPage<ServerSideProps> = () => {
         </p>
       </div>
       
-      <div>
-        <p className="px-5 py-5 text-center font-semibold text-sm">
-          Latest Blogs
-          <br />
-          <p className = "text-xs text-center py-3 text-orange-600"> See More Blogs &rarr;
-          <br /></p>
-        </p>
-      </div>
 
     </div>
 	</div>
@@ -146,7 +144,7 @@ const Home:NextPage<ServerSideProps> = () => {
 
 const CardImage= ({ data } : { data: Consultant }) => {
 	return(
-		<div className=" m-8 items-center w-36 h- 32">
+		<div className=" m-8 items-center w-36 h- 32 cursor-pointer hover:shadow">
 	<Link href={{ pathname: `/consulting/${data._id}` }} passHref>
     <div className="p-5">
         <div className="mb-2 text-xs text-gray-900 dark:text-gray">{data.name}</div>
