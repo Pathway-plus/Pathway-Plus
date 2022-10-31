@@ -34,6 +34,7 @@ const Home:NextPage<ServerSideProps> = () => {
       <div className="py-10">
         <p className="px-10 text-xl text-left">
           Welcome To </p><p className="px-10 py-3 text-2xl text-bold text-left"> Pathway Plus!
+		  <Image src={"/assets/hiFive.png"} width="46" height="47"></Image>
         </p>
         <div>
           <p className=" px-10 py-5 text-xs">Planning to study abroad? This is the right <br/> place for your goal!</p>
