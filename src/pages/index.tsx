@@ -31,25 +31,31 @@ const Home:NextPage<ServerSideProps> = () => {
         <meta name="description" content="Pathway Plus" />
         <link rel="icon" href="/favicon.ico" />
       </Head>	
-      <div className="py-10">
-        <p className="px-10 text-xl text-left">
-          Welcome To </p><p className="px-10 py-3 text-2xl text-bold text-left"> Pathway Plus!
-		  <Image src={"/assets/hiFive.png"} width="46" height="47"></Image>
-        </p>
-        <div>
-          <p className=" px-10 py-5 text-xs">Planning to study abroad? This is the right <br/> place for your goal!</p>
+
+	  <div className="flex py-6 px-4">
+	  	<div className="flex items-center justify-between">
+		  <div className="flex flex-col px-4">
+		  <span className="text-xl">Welcome To</span>
+            <p className="text-2xl text-bold">Pathway Plus!
+			<Image src={"/assets/hiFive.png"} width="46" height="47"></Image></p>
+			<span className="py-5 text-xs"> Planning to study abroad? This is the right <br/> place for your goal!
           <br />
-        </div>
-        <div className="px-10">
-          <button className="w-48 py-3 rounded-lg text-white bg-orange-500 hover:bg-orange-600 shadow-[0_0px_10px_2px_rgba(0,0,0,0.25)] hover:shadow-[0_0px_10px_2px_rgba(0,0,0,0.05)] transition-all">
+        </span>
+		<br />
+		<button className="w-48 py-3 rounded-lg text-white bg-orange-500 hover:bg-orange-600 shadow-[0_0px_10px_2px_rgba(0,0,0,0.25)] hover:shadow-[0_0px_10px_2px_rgba(0,0,0,0.05)] transition-all">
             <a href="/consulting">
         Explore Now
             </a>
           </button>
-        </div>
+		</div>
+	
       </div>
-      
-  
+		<span className="ml-56"> <Image src={"/assets/girlWithfile.png"} width="150" height="150"></Image></span>
+	   <span className="px-4"><Image src={"/assets/girl2.png"} width="150" height="150"></Image></span>
+	  </div>
+
+
+
       <div className="px-5 py-5 grid grid-flow-col grid-rows-1 grid-cols-3 gap-4">
     
         <a href="/consulting">
