@@ -50,8 +50,14 @@ const Home:NextPage<ServerSideProps> = () => {
 		</div>
 	
       </div>
-		<span className="ml-56"> <Image src={"/assets/girlWithfile.png"} width="150" height="150"></Image></span>
-	   <span className="px-4"><Image src={"/assets/girl2.png"} width="150" height="150"></Image></span>
+	   <span className="absolute right-0 px-2"><Image src={"/assets/ellipse/yellow.png"} width="150" height="150"></Image></span>
+	   <span className="absolute mx-[493px] my-32"><Image src={"/assets/ellipse/blue.png"} width="15" height="15"></Image></span>
+	  <div className="grid grid-flow-col grid-rows-2 py-6 px-4 gap-2">
+		<span className="ml-56"> <Image src={"/assets/girlWithfile.png"} width="160" height="160"></Image></span>
+	   <span className="ml-56"><Image src={"/assets/girl3.png"} width="150" height="150"></Image></span>
+	   <span className="px-4 z-10"><Image src={"/assets/girl2.png"} width="150" height="150"></Image></span>
+	   <span className="px-4"><Image src={"/assets/girl4.png"} width="150" height="150"></Image></span>
+	   </div>
 	  </div>
 
 
