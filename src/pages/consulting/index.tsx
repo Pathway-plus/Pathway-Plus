@@ -48,9 +48,9 @@ const Consulting: NextPage<ServerSideProps> = () => {
         <div className="relative flex flex-col p-10 space-y-12 max-w-2xl items-center">
           <h1 className="text-4xl font-semibold text-white">What is Consultation?</h1>
           <p className="text-white text-lg">
-						Lacus mattis odio sem fusce convallis vitae aliquam tempor. Quam ut odio
-						eget eu amet. Aenean tortor amet sit lorem. Nibh pharetra lorem tellus nisl 
-						feugiat eu.
+            Lacus mattis odio sem fusce convallis vitae aliquam tempor. Quam ut odio
+            eget eu amet. Aenean tortor amet sit lorem. Nibh pharetra lorem tellus nisl
+            feugiat eu.
           </p>
           <div className="flex w-full">
             <form className="flex flex-1" onSubmit={filterName}>
@@ -69,8 +69,8 @@ const Consulting: NextPage<ServerSideProps> = () => {
       <div>
         <h1 className="text-center text-3xl font-semibold">Meet Our Consultants</h1>
         <div className="flex flex-wrap justify-center">
-          {noConsultantsFound 
-            ? <p className="py-36">No consultants found...</p> 
+          {noConsultantsFound
+            ? <p className="py-36">No consultants found...</p>
             : (consultantsData).map((data) => (
               <Card key={data._id} data={data} />
             ))}
@@ -87,7 +87,7 @@ const Card = ({ data } : { data: Consultant }) => {
       <div className="group active:scale-105 flex flex-col w-72 px-10 py-4 m-6 mt-20 space-y-4 items-center rounded-lg cursor-pointer shadow-default hover:shadow-expand active:shadow-shrink transition-all">
         <div className="group-hover:scale-105 transition-transform relative -mt-20 w-36 h-36">
           {/* <Image src={data.profile} layout="fill" alt={`Picture of ${data.name}`}  className="object-cover rounded-full" /> */}
-          <Image src={"/assets/man.png"} layout="fill" alt={`Picture of ${data.name}`}  className="object-cover rounded-full" />
+          <Image src={"/assets/man.png"} layout="fill" alt={`Picture of ${data.name}`} className="object-cover rounded-full" />
         </div>
         <p className="text-lg font-semibold">{data.name}</p>
         <ul className="flex-1 w-10/12 space-y-1 list-disc">
@@ -116,16 +116,15 @@ const PageNavigation = ({ currentPage, totalPages, setPage }: { currentPage:numb
   return (
     <div className="flex flex-row px-12 space-x-2 mb-6">
       <button onClick={prevPage} className={buttonClassName}><p>{"<"}</p></button>
-      {pages.map((page) => { 
+      {pages.map((page) => {
         const isCurrent = currentPage === page + 1;
-        return <button 
-          onClick={() => setPage(page + 1)} 
-          key={page} 
+        return <button
+          onClick={() => setPage(page + 1)}
+          key={page}
           className={`${buttonClassName} ${isCurrent && "bg-primary border-0"}`}>
           <p className={isCurrent ? "text-white" : ""}>{page + 1}</p>
         </button>;
-      }
-      )}
+      })}
       <button onClick={nextPage} className={buttonClassName}><p>{">"}</p></button>
     </div>
   );

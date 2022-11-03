@@ -1,4 +1,4 @@
-import type {  GetServerSideProps, NextPage } from "next";
+import type { GetServerSideProps, NextPage } from "next";
 import React, { useState } from "react";
 import Image from "next/image";
 
@@ -29,7 +29,7 @@ const ConsultantBooking: NextPage<ServerSideProps> = ({ sessions, id }: ServerSi
     newForm[field] = e.target.value;
     return newForm;
   });
-  
+
   return (
     <div>
       <div className="group relative flex justify-center bg-black bg-opacity-50">
@@ -62,7 +62,8 @@ const ConsultantBooking: NextPage<ServerSideProps> = ({ sessions, id }: ServerSi
           <label htmlFor="education">Purpose of Consultation (Optional)</label>
           <textarea id="education" placeholder="Tell us something..." onChange={editForm} className="sm:w-[600px] h-40 mt-2 mb-4 p-3 border-2" />
           <p className="mb-3 text-xs text-gray-500">
-            By submitting the form, you agree to the {" "}
+            By submitting the form, you agree to the
+            {" "}
             <span className="text-primary">terms & policy.</span>
           </p>
           <span className="space-x-4">

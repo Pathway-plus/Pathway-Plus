@@ -21,9 +21,18 @@
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
-        "indent": "off",
-        "quotes": [ "error","double" ],
-        "semi": [ "error","always" ],
+        "react/jsx-one-expression-per-line": [ "warn", { "allow": "single-child" }],
+        "react/jsx-props-no-multi-spaces": "warn",
+        "quotes": ["warn", "double"],
+        "semi": ["warn", "always"],
+        "indent": ["warn", 2],
+        "brace-style": ["warn", "1tbs"],
+        "object-curly-newline": ["warn", { "consistent": true }],
+        "no-multi-spaces": "warn",
+        "no-multiple-empty-lines": ["warn", { "max": 1 }],
+        "no-trailing-spaces": "warn",
+        "array-bracket-spacing": ["warn", "never"],
+        "comma-dangle": ["warn", "always-multiline"],
         "@typescript-eslint/no-explicit-any": "off"
     }
 }
