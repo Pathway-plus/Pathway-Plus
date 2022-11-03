@@ -12,13 +12,20 @@ const Home: NextPage = () => {
         <title>Pathway Plus</title>
         <meta name="description" content="Pathway Plus" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>	
+      </Head>
       <div className="py-10">
         <p className="px-10 text-xl text-left">
-          Welcome To </p><p className="px-10 py-3 text-2xl text-bold text-left"> Pathway Plus!
+          Welcome To
+        </p>
+        <p className="px-10 py-3 text-2xl text-bold text-left">
+            Pathway Plus!
         </p>
         <div>
-          <p className=" px-10 py-5 text-xs">Planning to study abroad? This is the right <br/> place for your goal!</p>
+          <p className=" px-10 py-5 text-xs">
+            Planning to study abroad? This is the right
+            <br/>
+            place for your goal!
+          </p>
           <br />
         </div>
         <div className="px-10">
@@ -30,10 +37,9 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-        
-
       <p className={styles.description}>
-          Links: {" "}
+          Links:
+        {" "}
         <a href="/consulting" className={styles.link}>consulting, </a>
         <a href="/consulting/booking" className={styles.link}>bookings, </a>
       </p>
@@ -43,10 +49,8 @@ const Home: NextPage = () => {
       </p>
       <br />
 
-      
-  
       <div className="px-5 py-5 grid grid-flow-col grid-rows-1 grid-cols-3 gap-4">
-    
+
         <a href="/consulting">
           <div className="w-54 h-40 bg-green-400 rounded-lg shadow-lg border-b">
             <GiDiscussion className={styles.icon1}></GiDiscussion>
@@ -55,10 +59,8 @@ const Home: NextPage = () => {
             <p className = "text-sm text-center py-3 ">Consultation </p>
             <br />
             <p className = "text-xs text-center py-3 text-orange-600">Learn More &rarr;</p>
-          </div>	
+          </div>
         </a>
-          
-          
 
         <a href="#">
           <div className="w-54 h-40 bg-blue-500 rounded-lg shadow-lg border-b">
@@ -82,29 +84,26 @@ const Home: NextPage = () => {
           </div>
         </a>
       </div>
-    
-    
 
       <div className="h-32 bg-orange-500 text-white px-4 flex flex-row items-center">
         <p className="text-center text-sm border-r-2 basis-1/3">
-          Events 
+          Events
           <br />
           <span className="py-3 text-xl">50+</span>
         </p>
         <p className="text-center text-sm border-r-2 basis-1/3">
           Volunteers
-          <br /> 
+          <br />
           <span className="py-3 text-xl">100+</span>
         </p>
         <p className="text-center text-sm basis-1/3">
           Total Proofreading
-          <br /> 
+          <br />
           <span className="py-3 text-xl">500+</span>
         </p>
 
       </div>
 
-      
       <div>
         <p className="px-5 py-5 text-center font-semibold text-sm">
           Our Consultants
@@ -122,7 +121,7 @@ const Home: NextPage = () => {
           gird and pics
         </p>
       </div>
-      
+
       <div>
         <p className="px-5 py-5 text-center font-semibold text-sm">
           Latest Blogs

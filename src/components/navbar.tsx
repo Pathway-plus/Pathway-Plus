@@ -50,7 +50,7 @@ const navbar: React.FC = () => {
                 data-dropdown-toggle="dropdownNavbar"
                 className="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-black rounded hover:text-orange-500 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto"
               >
-                Services{" "}
+                Services
                 <svg
                   className="ml-1 w-5 h-5"
                   aria-hidden="true"
