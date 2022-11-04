@@ -64,7 +64,6 @@ const ConsultantBooking: NextPage<ServerSideProps> = ({ sessions, id }: ServerSi
           <p className="mb-3 text-xs text-gray-500">
             By submitting the form, you agree to the
             {" "}
-            {" "}
             <span className="text-primary">terms & policy.</span>
           </p>
           <span className="space-x-4">

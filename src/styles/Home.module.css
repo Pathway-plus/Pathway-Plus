@@ -129,18 +129,3 @@
   }
 }
 
-.icon1, .icon2, .icon3{
-  width: 50px;
-  height: 50px;
-  position: relative;
-  top: 70px;
-  left: 135px;
-  fill: #fff;
-}
-
-.statsBar{
-  text-align: center;
-  padding: 3.5em;
-  background: #ffa700;
-  height:200px;
-}

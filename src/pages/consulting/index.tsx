@@ -45,12 +45,12 @@ const Consulting: NextPage<ServerSideProps> = () => {
     <div>
       <div className="group relative flex mb-4 justify-center">
         <Image src="/assets/consulting.jpg" layout="fill" alt="Consultation background" className="group-hover:scale-105 object-cover transition-transform" />
-        <div className="relative flex flex-col p-10 gap-y-12 md:max-w-2xl w-11/12 items-center">
-          <h1 className="md:text-4xl text-3xl font-semibold text-white text-center">What is Consultation?</h1>
-          <p className="text-white md:text-lg text-sm">
-						Lacus mattis odio sem fusce convallis vitae aliquam tempor. Quam ut odio
-						eget eu amet. Aenean tortor amet sit lorem. Nibh pharetra lorem tellus nisl
-						feugiat eu.
+        <div className="relative flex flex-col p-10 space-y-12 max-w-2xl items-center">
+          <h1 className="text-4xl font-semibold text-white">What is Consultation?</h1>
+          <p className="text-white text-lg">
+            Lacus mattis odio sem fusce convallis vitae aliquam tempor. Quam ut odio
+            eget eu amet. Aenean tortor amet sit lorem. Nibh pharetra lorem tellus nisl
+            feugiat eu.
           </p>
           <div className="flex w-full flex-wrap gap-2">
             <form className="flex flex-1" onSubmit={filterName}>
@@ -124,8 +124,7 @@ const PageNavigation = ({ currentPage, totalPages, setPage }: { currentPage:numb
           className={`${buttonClassName} ${isCurrent && "bg-primary border-0"}`}>
           <p className={isCurrent ? "text-white" : ""}>{page + 1}</p>
         </button>;
-      },
-      )}
+      })}
       <button onClick={nextPage} className={buttonClassName}><p>{">"}</p></button>
     </div>
   );
