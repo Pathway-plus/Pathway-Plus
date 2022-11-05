@@ -56,7 +56,6 @@ const Home:NextPage<ServerSideProps> = () => {
 
         </div>
 
-        <span className="absolute right-0 px-2"><Image src={"/assets/ellipse/yellow.png"} width="150" height="150"></Image></span>
 
         <div className="grid grid-flow-col grid-rows-2 py-6 px-4 gap-2">
           <span className="ml-56">
@@ -67,12 +66,13 @@ const Home:NextPage<ServerSideProps> = () => {
           <span className="px-4"><Image src={"/assets/girl4.png"} width="150" height="150"></Image></span>
         </div>
 
-        <span className="absolute right-80 my-32"><Image src={"/assets/ellipse/blue.png"} width="15" height="15"></Image></span>
-        <span className="absolute px-48"><Image src={"/assets/ellipse/orange.png"} width="10" height="10"></Image></span>
-        <span className="absolute left-72 my-[330px]"><Image src={"/assets/ellipse/pink.png"} width="15" height="15"></Image></span>
-        <span className="absolute right-[280px] my-[370px]"><Image src={"/assets/ellipse/smallYellow.png"} width="20" height="20"></Image></span>
-        <span className="absolute -mx-20 right-[330px]"><Image src={"/assets/ellipse/orange.png"} width="10" height="10"></Image></span>
-        <span className="absolute right-8 my-[330px]"><Image src={"/assets/ellipse/pink.png"} width="15" height="15"></Image></span>
+        <span className="-z-10 absolute right-0 px-2"><Image src={"/assets/ellipse/yellow.png"} width="150" height="150"></Image></span>
+        <span className="-z-10 absolute right-80 my-32"><Image src={"/assets/ellipse/blue.png"} width="15" height="15"></Image></span>
+        <span className="-z-10 absolute px-48"><Image src={"/assets/ellipse/orange.png"} width="10" height="10"></Image></span>
+        <span className="-z-10 absolute left-72 my-[330px]"><Image src={"/assets/ellipse/pink.png"} width="15" height="15"></Image></span>
+        <span className="-z-10 absolute right-[280px] my-[370px]"><Image src={"/assets/ellipse/smallYellow.png"} width="20" height="20"></Image></span>
+        <span className="-z-10 absolute -mx-20 right-[330px]"><Image src={"/assets/ellipse/orange.png"} width="10" height="10"></Image></span>
+        <span className="-z-10 absolute right-8 my-[330px]"><Image src={"/assets/ellipse/pink.png"} width="15" height="15"></Image></span>
       </div>
 
       <div className="px-5 py-5 text-center font-semibold text-sm">
