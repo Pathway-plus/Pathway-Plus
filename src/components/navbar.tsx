@@ -102,7 +102,7 @@ const navbar: React.FC = () => {
               <Link href="#">Careers</Link>
             </li>
             <li className="nav-items">
-              <Link href="#">Contact Us</Link>
+              <Link href="/contact_us">Contact Us</Link>
             </li>
           </ul>
         </div>
