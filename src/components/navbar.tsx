@@ -99,9 +99,6 @@ const navbar: React.FC = () => {
               <Link href="/aboutUs">About Us</Link>
             </li>
             <li className="nav-items">
-              <Link href="#">Blog</Link>
-            </li>
-            <li className="nav-items">
               <Link href="#">Careers</Link>
             </li>
             <li className="nav-items">
