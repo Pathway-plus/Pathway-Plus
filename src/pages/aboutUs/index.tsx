@@ -21,10 +21,24 @@ const AboutUs:NextPage =() =>{
           </div>
         </div>
       </div>
-      <p className="px-5 py-5 text-center font-semibold text-sm">Our Missions</p>
-      <p className="px-5 py-5 text-center font-semibold text-sm">Head Of Organizations</p>
-      <p className="px-5 py-5 text-center font-semibold text-sm">Where We Start</p>
-      <p className="px-5 py-5 text-center font-semibold text-sm">Our Volunteers</p>
+
+      <div>
+        <p className="px-5 py-5 text-center font-semibold text-sm">Our Missions</p>
+      </div>
+      <span className="-z-10 relative left-0 px-10"><Image src={"/assets/about-us/demo.png"} width="200" height="150"></Image></span>
+
+      <div>
+        <p className="px-5 py-5 text-center font-semibold text-sm">Head Of Organizations</p>
+        <br />
+      </div>
+      <div>
+        <p className="px-5 py-5 text-center font-semibold text-sm">Where We Start</p>
+        <br />
+      </div>
+      <div>
+        <p className="px-5 py-5 text-center font-semibold text-sm">Our Volunteers</p>
+        <br />
+      </div>
 
     </div>
   );
