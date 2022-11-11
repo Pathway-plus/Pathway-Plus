@@ -19,7 +19,7 @@ const footer: React.FC = () => {
               <Link href="/">Home</Link>
             </li>
             <li className="mb-4 hover:underline">
-              <Link href="#">About Us</Link>
+              <Link href="/aboutUs">About Us</Link>
             </li>
             <li className="mb-4 hover:underline">
               <Link href="#">Careers</Link>
@@ -42,9 +42,6 @@ const footer: React.FC = () => {
         <div>
           <ul className="text-white ml-5">
             <li className="mb-4 hover:underline">
-              <Link href="#">Blogs</Link>
-            </li>
-            <li className="mb-4 hover:underline">
               <Link href="#">Contact Us</Link>
             </li>
             {/* <li className="mb-4 hover:underline">
@@ -53,13 +50,13 @@ const footer: React.FC = () => {
             <li className="mb-4 hover:underline">
               <Link href="#">Booking</Link>
             </li>
+            <li className="mb-4 hover:underline">
+              <Link href="#">Terms &amp; Conditions</Link>
+            </li>
           </ul>
         </div>
         <div>
           <ul className="text-white ml-5">
-            <li className="mb-4 hover:underline">
-              <Link href="#">Terms &amp; Conditions</Link>
-            </li>
             <li className="mb-4 hover:underline">
               <Link href="#">Privacy &amp; Policy</Link>
             </li>
