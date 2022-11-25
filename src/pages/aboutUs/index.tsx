@@ -26,10 +26,10 @@ const AboutUs:NextPage =() =>{
         <p className="px-5 py-5 text-center font-semibold text-sm">Our Missions</p>
       </div>
       <div className="flex">
-        <span className="relative left-12 w-1/2"><Image src={"/assets/about-us/demo.png"} width="350" height="250"></Image></span>
+        <div className="relative left-0 top-48"><Image src={"/assets/about-us/twoOrangeL.png"} width="100" height="250"></Image></div>
+        <div className="relative left-2 w-1/2"><Image src={"/assets/about-us/demo.png"} width="350" height="270"></Image></div>
 
         <div className="w-1/2 float-right mr-16 font-light">
-
           <div className="flex float-right py-2 mr-6">
             <span className="relative float-left"><Image src={"/assets/about-us/Vector.png"} width="20" height="20"></Image></span>
             <span className="mx-2 float-right text-xs">
@@ -78,24 +78,26 @@ conducive to the attainment of any or all of the above
  objects.
             </span>
           </div>
-
         </div>
       </div>
 
-      <div className ="px-5 py-5 text-center font-semibold text-sm">
-        <p className="px-5 py-5 text-center font-semibold text-sm">Head Of Organizations</p>
+      <div className="float-right -mt-20"><Image src={"/assets/about-us/twoOrangeR.png"} width="100" height="250"></Image></div>
+
+      <div>
+        <p className="px-24 mt-12 text-center font-semibold text-sm">Head Of Organizations</p>
         <br />
       </div>
       <div>
-        <p className="px-5 py-5 text-center font-semibold text-sm">Where We Start</p>
+        <p className="px-24 mt-5 text-center font-semibold text-sm">Where We Start</p>
         <br />
       </div>
       <div>
-        <p className="px-5 py-5 text-center font-semibold text-sm">Our Volunteers</p>
+        <p className="px-5 mt-5 text-center font-semibold text-sm">Our Volunteers</p>
         <br />
       </div>
 
     </div>
+
   );
 };
 
