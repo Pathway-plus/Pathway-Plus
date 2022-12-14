@@ -21,3 +21,11 @@ interface Session {
   "weekly": boolean,
   "__v": number,
 }
+
+interface Volunteer {
+	_id: string;
+	name: string;
+	role: { name: string };
+	department: { name: string };
+	duration: string;
+  }

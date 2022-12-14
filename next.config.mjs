@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   env: {
-    API_URL: "https://pathway-deploy.vercel.app"
+    API_URL: "https://pathway-deploy.vercel.app",
   }
 };
 

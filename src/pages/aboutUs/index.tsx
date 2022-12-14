@@ -1,7 +1,17 @@
 import Image from "next/image";
 import type {NextPage } from "next";
+import { useEffect } from "react";
+import useVolunteers from "../../hooks/useVolunteers";
+
 
 const AboutUs:NextPage =() =>{
+
+  const { loading, volunteers, getVolunteers } = useVolunteers();
+  const volunteersData = loading ? [] : volunteers;
+
+  useEffect(() => {
+    getVolunteers();
+  }, []);
 
   return(
     <div>
@@ -87,17 +97,63 @@ conducive to the attainment of any or all of the above
         <p className="px-24 mt-12 text-center font-semibold text-sm">Head Of Organizations</p>
         <br />
       </div>
-      <div>
-        <p className="px-24 mt-5 text-center font-semibold text-sm">Where We Start</p>
-        <br />
+
+      <div className="mt-5">
+
+        <p className="px-24 text-center font-semibold text-sm">Where We Start</p>
+
+        <span className="-mt-12 float-right"><Image src={"/assets/about-us/rightTri.png"} width="50" height="100"></Image></span>
+        <span className="-mt-12 float-left"><Image src={"/assets/about-us/leftTri.png"} width="50" height="100"></Image></span>
+
+        <div className="left-4">
+          <p>Jan 2021</p>
+          <p>Launch of Organization</p>
+        </div>
+
       </div>
+	
+	 <p> {JSON.stringify(volunteersData)} </p>;
+
       <div>
         <p className="px-5 mt-5 text-center font-semibold text-sm">Our Volunteers</p>
         <br />
+        <div className="border-2 border-t-0 rounded-lg">
+          <table className="w-full">
+            <thead>
+              <tr className="h-14 text-white">
+                <td className="min-w-[15px] rounded-l-lg bg-primary"></td>
+                <td className="pr-2 bg-primary">No.</td>
+                <td className="pr-2 bg-primary">Volunteer Name</td>
+                <td className="pr-2 bg-primary">Role</td>
+                <td className="pr-2 bg-primary">Department</td>
+                <td className="pr-2 bg-primary">Duration</td>
+              </tr>
+            </thead>
+
+            <tbody className="overflow-y-scroll">
+              {volunteersData.map((volunteer, index) => (
+                <VolunteerRow key={volunteer._id} index={index} volunteer={volunteer} />
+              ))}
+            </tbody>
+          </table>
+        </div>
+
       </div>
 
     </div>
+  );
+};
 
+const VolunteerRow = ({ index, volunteer }: { index: number; volunteer: Volunteer }) => {
+  return (
+    <tr className="h-12 text-slate-600">
+      <td></td>
+      <td>{index + 1}</td>
+      <td>{volunteer.name}</td>
+      <td>{volunteer.role.name}</td>
+      <td>{volunteer.department.name}</td>
+      <td>{volunteer.duration}</td>
+    </tr>
   );
 };
 
