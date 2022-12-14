@@ -56,7 +56,6 @@ const Home:NextPage<ServerSideProps> = () => {
 
         </div>
 
-
         <div className="grid grid-flow-col grid-rows-2 py-6 px-4 gap-2">
           <span className="ml-56">
             <Image src={"/assets/girlWithfile.png"} width="160" height="160"></Image>
@@ -162,6 +161,21 @@ const Home:NextPage<ServerSideProps> = () => {
           <p className="px-5 py-5 text-center font-semibold text-sm">
             Testimonials
           </p>
+        </div>
+
+        <div>
+          <p className="px-5 py-5 text-center font-semibold text-sm">
+            Recent Companies We've Worked With
+          </p>
+          <span className="ml-32">
+            <Image src={"/assets/ayu.png"} width="250" height="150"></Image>
+          </span>
+          <span className="">
+            <Image src={"/assets/skynet.png"} width="250" height="180"></Image>
+          </span>
+        </div>
+        <div className="ml-64 my-16">
+          <Image src={"/assets/kbz.png"} width="130" height="120"></Image>
         </div>
 
       </div>

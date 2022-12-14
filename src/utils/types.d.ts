@@ -23,9 +23,9 @@ interface Session {
 }
 
 interface Volunteer {
-	_id: string;
-	name: string;
-	role: { name: string };
-	department: { name: string };
-	duration: string;
+	"_id": string;
+	"name": string;
+	"role": { name: string };
+	"department": { name: string };
+	"duration": string;
   }

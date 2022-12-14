@@ -3,7 +3,6 @@ import type {NextPage } from "next";
 import { useEffect } from "react";
 import useVolunteers from "../../hooks/useVolunteers";
 
-
 const AboutUs:NextPage =() =>{
 
   const { loading, volunteers, getVolunteers } = useVolunteers();
@@ -12,6 +11,19 @@ const AboutUs:NextPage =() =>{
   useEffect(() => {
     getVolunteers();
   }, []);
+
+  const VolunteerRow = ({ index, volunteer }: { index: number; volunteer: Volunteer }) => {
+    return (
+      <tr className="border-2 h-10 text-slate-600">
+        <td></td>
+        <td className="px-4">{index + 1}</td>
+        <td>{volunteer.name}</td>
+        <td>{volunteer.role.name}</td>
+        <td>{volunteer.department.name}</td>
+        <td>{volunteer.duration}</td>
+      </tr>
+    );
+  };
 
   return(
     <div>
@@ -55,7 +67,7 @@ const AboutUs:NextPage =() =>{
           <div className="flex float-right py-2">
             <span className="relative float-left"><Image src={"/assets/about-us/Vector.png"} width="20" height="20"></Image></span>
             <span className="mx-2 float-right text-xs">
-	To establish the community not only to provide Burmese
+			To establish the community not only to provide Burmese
               <br />
 			youths through on-ground vocational training
               <br />
@@ -72,20 +84,20 @@ const AboutUs:NextPage =() =>{
           <div className="flex float-right py-2 mr-[5px]">
             <span className="relative float-left"><Image src={"/assets/about-us/Vector.png"} width="20" height="20"></Image></span>
             <span className="mx-2 float-right text-xs">
- To undertake any research necessary to futher any of the
+				To undertake any research necessary to futher any of the
               <br />
- objects specified above
+				objects specified above
             </span>
           </div>
 
           <div className="flex float-right py-2 mr-6">
             <span className="relative float-left"><Image src={"/assets/about-us/Vector.png"} width="20" height="20"></Image></span>
             <span className="mx-2 float-right text-xs">
- To do all such other lawful things as are incidental or
+				To do all such other lawful things as are incidental or
               <br />
-conducive to the attainment of any or all of the above
+				conducive to the attainment of any or all of the above
               <br />
- objects.
+				objects.
             </span>
           </div>
         </div>
@@ -104,25 +116,17 @@ conducive to the attainment of any or all of the above
 
         <span className="-mt-12 float-right"><Image src={"/assets/about-us/rightTri.png"} width="50" height="100"></Image></span>
         <span className="-mt-12 float-left"><Image src={"/assets/about-us/leftTri.png"} width="50" height="100"></Image></span>
-
-        <div className="left-4">
-          <p>Jan 2021</p>
-          <p>Launch of Organization</p>
-        </div>
-
       </div>
-	
-	 <p> {JSON.stringify(volunteersData)} </p>;
 
       <div>
         <p className="px-5 mt-5 text-center font-semibold text-sm">Our Volunteers</p>
         <br />
-        <div className="border-2 border-t-0 rounded-lg">
-          <table className="w-full">
+        <div className="border-1 border-t-0 text-xs">
+          <table className="w-11/12 mx-10">
             <thead>
               <tr className="h-14 text-white">
-                <td className="min-w-[15px] rounded-l-lg bg-primary"></td>
-                <td className="pr-2 bg-primary">No.</td>
+                <td className="rounded-l-lg bg-primary"></td>
+                <td className="px-4 pr-2 bg-primary">No.</td>
                 <td className="pr-2 bg-primary">Volunteer Name</td>
                 <td className="pr-2 bg-primary">Role</td>
                 <td className="pr-2 bg-primary">Department</td>
@@ -137,23 +141,10 @@ conducive to the attainment of any or all of the above
             </tbody>
           </table>
         </div>
-
+				<br />
       </div>
 
     </div>
-  );
-};
-
-const VolunteerRow = ({ index, volunteer }: { index: number; volunteer: Volunteer }) => {
-  return (
-    <tr className="h-12 text-slate-600">
-      <td></td>
-      <td>{index + 1}</td>
-      <td>{volunteer.name}</td>
-      <td>{volunteer.role.name}</td>
-      <td>{volunteer.department.name}</td>
-      <td>{volunteer.duration}</td>
-    </tr>
   );
 };
 
