@@ -164,20 +164,19 @@ const Home:NextPage<ServerSideProps> = () => {
         </div>
 
         <div>
-          <p className="px-5 py-5 text-center font-semibold text-sm">
+          <p className="mx-5 my-16 text-center font-semibold text-sm">
             Recent Companies We've Worked With
           </p>
-          <span className="ml-32">
-            <Image src={"/assets/ayu.png"} width="250" height="150"></Image>
+          <span className="ml-56">
+            <Image src={"/assets/ayu.png"} width="200" height="120"></Image>
           </span>
-          <span className="">
+          <span className="mr-48 mt-7 float-right">
             <Image src={"/assets/skynet.png"} width="250" height="180"></Image>
           </span>
         </div>
-        <div className="ml-64 my-16">
-          <Image src={"/assets/kbz.png"} width="130" height="120"></Image>
+        <div className="ml-72 my-10">
+          <Image src={"/assets/kbz.png"} width="100" height="100"></Image>
         </div>
-
       </div>
     </div>
   );
