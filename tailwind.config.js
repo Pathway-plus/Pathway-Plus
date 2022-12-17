@@ -14,6 +14,7 @@ module.exports = {
         "purple": "#C933D6",
         "green": "#33D670",
         "yellow": "#FADD35",
+        "gray-text": "#7D7D7D",
       },
       boxShadow: {
         "default": "0 0px 10px 2px rgba(0,0,0,0.2)",

@@ -21,3 +21,7 @@ interface Session {
   "weekly": boolean,
   "__v": number,
 }
+
+interface AvailableEvent {
+  [key: string]: any;
+}
