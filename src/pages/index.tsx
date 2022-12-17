@@ -165,7 +165,7 @@ const Home:NextPage<ServerSideProps> = () => {
 
         <div>
           <p className="mx-5 my-16 text-center font-semibold text-sm">
-            Recent Companies We've Worked With
+            Recent Companies We Have Worked With
           </p>
           <span className="ml-56">
             <Image src={"/assets/ayu.png"} width="200" height="120"></Image>
