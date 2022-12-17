@@ -1,78 +1,54 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const footer: React.FC = () => {
+const Footer: React.FC = () => {
   return (
-    <footer className="bg-orange-500">
-      <div className="grid grid-cols-2 py-8 px-1 md:grid-cols-5">
-        <div className="mb-4 lg:ml-5">
-          <Image
-            src="/assets/logo-white.png"
-            width={160}
-            height={160}
-            alt="Pathway Plus Logo"
-          />
-        </div>
-        <div>
-          <ul className="text-white ml-5">
-            <li className="mb-4 hover:underline">
-              <Link href="/">Home</Link>
-            </li>
-            <li className="mb-4 hover:underline">
-              <Link href="/aboutUs">About Us</Link>
-            </li>
-            <li className="mb-4 hover:underline">
-              <Link href="#">Careers</Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <ul className="text-white ml-5">
-            <li className="mb-4 hover:underline">
-              <Link href="#">Proof-Reading</Link>
-            </li>
-            <li className="mb-4 hover:underline">
-              <Link href="/consulting">Consultation</Link>
-            </li>
-            <li className="mb-4 hover:underline">
-              <Link href="#">Events</Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <ul className="text-white ml-5">
-            <li className="mb-4 hover:underline">
-              <Link href="#">Contact Us</Link>
-            </li>
-            {/* <li className="mb-4 hover:underline">
-              <Link href="#">Account Info</Link>
-            </li> */}
-            <li className="mb-4 hover:underline">
-              <Link href="#">Booking</Link>
-            </li>
-            <li className="mb-4 hover:underline">
-              <Link href="#">Terms &amp; Conditions</Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <ul className="text-white ml-5">
-            <li className="mb-4 hover:underline">
-              <Link href="#">Privacy &amp; Policy</Link>
-            </li>
-            <li className="mb-4 hover:underline">
-              <Link href="#">FAQs</Link>
-            </li>
-          </ul>
-        </div>
+    <footer className="bg-orange-500 text-white">
+      <div className="grid grid-cols-2 py-8 md:grid-cols-5 space-x-5 space-y-4">
+        <Image
+          src="/assets/logo-white.png"
+          width={160}
+          height={160}
+          layout="fixed"
+          alt="Pathway Plus Logo"
+        />
+
+        <ul>
+          <Item href="/aboutUs" title="About Us" />
+          <Item href="/careers" title="Careers" />
+          <Item href="/contact_us" title="Contact Us" />
+        </ul>
+        <ul>
+          <Item href="/consulting" title="Consultation" />
+          <Item href="/proofreading" title="Proofreading" />
+          <Item href="/events" title="Events" />
+        </ul>
+        <ul>
+          <Item href="#" title="Terms & Conditions" />
+          <Item href="#" title="Privacy & Policy" />
+          <Item href="#" title="FAQs" />
+        </ul>
+
       </div>
-      <div className="py-6 px-4 bg-orange-500 flex items-center justify-between">
-        <span className="m-auto text-sm text-white text-center">
+
+      <p className="py-6 px-4 text-sm text-center">
           Copyright ©2022. All rights reserved by Pathway Plus.
-        </span>
-      </div>
+      </p>
     </footer>
   );
 };
 
-export default footer;
+interface ItemProps {
+  href: string;
+  title: string;
+}
+
+const Item = ({ href, title }: ItemProps) => {
+  return (
+    <li className="mb-4 hover:underline">
+      <Link href={href}>{title}</Link>
+    </li>
+  );
+};
+
+export default Footer;

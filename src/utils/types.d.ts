@@ -29,3 +29,6 @@ interface Volunteer {
 	"department": { name: string };
 	"duration": string;
   }
+interface AvailableEvent {
+  [key: string]: any;
+}
