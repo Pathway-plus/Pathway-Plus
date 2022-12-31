@@ -3,12 +3,12 @@ import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import Link from "next/link";
 
-import useConsultants from "../../hooks/useConsultants";
+import useConsultants from "../../hooks/useConsultants"; // temporary fix until events api is implemented
 import { useRouter } from "next/router";
 
-const skeletonData = [{}, {}, {}] as Consultant[];
+const skeletonData = [{}, {}, {}] as AvailableEvent[];
 
-const Consulting: NextPage = () => {
+const EventsAll: NextPage = () => {
   const router = useRouter();
   const [page, setPage] = useState(1);
   const { loading, totalPages, consultants: events, getConsultants: getEvents } = useConsultants();
@@ -40,27 +40,28 @@ const Consulting: NextPage = () => {
 
 const Card = ({ data } : { data: AvailableEvent }) => {
   return (
-    <div className="group flex flex-col flex-1 min-w-[340px] max-w-[33vw] shrink p-3 gap-y-4 items-center rounded-lg shadow-default hover:shadow-expand active:shadow-shrink transition-all">
-      <div className="transition-transform relative w-full h-36">
-        {/* <Image src={"/assets/events.png"} layout="fill" alt={`Picture of ${data.name}`} className="object-cover" /> */}
-        <div className="bg-black w-full h-full rounded-lg" />
-      </div>
-      <p className="text-lg font-semibold">Study Medicine in Italy</p>
-      <div className="self-start text-sm text-gray-text space-y-1">
-        <p className="mb-2">Organizer: Pathway Plus</p>
-        <p>Venue: Online</p>
-        <p>Date: Monday, 17/10/2022</p>
-        <p>Time: 7:00PM (Myanmar Time)</p>
-      </div>
-      <div className="flex w-full justify-between text-primary-light text-sm font-semibold">
-        <p className="cursor-pointer hover:text-primary">Register Now</p>
-        <p className="flex items-center cursor-pointer hover:text-primary">
+    <Link href={`/events/${data._id}`}>
+      <div className="group flex flex-col flex-1 min-w-[340px] max-w-[33vw] shrink p-3 gap-y-4 items-center rounded-lg shadow-default cursor-pointer hover:shadow-expand active:shadow-shrink transition-all">
+        <div className="transition-transform relative w-full h-36">
+          {/* <Image src={"/assets/events.png"} layout="fill" alt={`Picture of ${data.name}`} className="object-cover" /> */}
+          <div className="bg-black w-full h-full rounded-lg" />
+        </div>
+        <p className="text-lg font-semibold">Study Medicine in Italy</p>
+        <div className="self-start text-sm text-gray-text space-y-1">
+          <p className="mb-2">Organizer: Pathway Plus</p>
+          <p>Venue: Online</p>
+          <p>Date: Monday, 17/10/2022</p>
+          <p>Time: 7:00PM (Myanmar Time)</p>
+        </div>
+        <div className="flex w-full justify-between text-primary-light text-sm font-semibold">
+          <p className="hover:text-primary">Register Now</p>
+          <p className="flex items-center hover:text-primary">
             Read More
-          <BsArrowRight className="ml-1"/>
-        </p>
+            <BsArrowRight className="ml-1"/>
+          </p>
+        </div>
       </div>
-    </div>
-
+    </Link>
   );
 };
 
@@ -89,4 +90,4 @@ const PageNavigation = ({ currentPage, totalPages, setPage }: { currentPage:numb
   );
 };
 
-export default Consulting;
+export default EventsAll;
