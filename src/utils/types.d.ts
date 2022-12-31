@@ -28,7 +28,12 @@ interface Volunteer {
 	"role": { name: string };
 	"department": { name: string };
 	"duration": string;
-  }
+}
+
 interface AvailableEvent {
+  [key: string]: any;
+}
+
+interface Careers {
   [key: string]: any;
 }
