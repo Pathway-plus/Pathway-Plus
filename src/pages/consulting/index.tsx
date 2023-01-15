@@ -2,6 +2,8 @@ import type { NextPage } from "next";
 import { FormEventHandler, useState, useEffect, ReactEventHandler, Dispatch, SetStateAction } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { MdSearch } from "react-icons/md";
+
 import useConsultants from "../../hooks/useConsultants";
 
 type ServerSideProps = {
@@ -56,12 +58,14 @@ const Consulting: NextPage<ServerSideProps> = () => {
             <form className="flex flex-1" onSubmit={filterName}>
               <input type="search" name="search" id="search" placeholder="Search your consultants" className="flex-1 px-3 py-1.5 outline-none rounded-l-md bg-slate-200" />
               {/* Replace emoji with vector icon */}
-              <button type="submit" className="w-10 bg-primary-light hover:bg-primary transition-colors rounded-r-md">🔎</button>
+              <button type="submit" className="w-10 bg-primary-light hover:bg-primary transition-colors rounded-r-md">
+                <MdSearch className="m-auto text-xl text-white" />
+              </button>
             </form>
-            <select onChange={filterCountry} id="select_country" className="p-1 bg-slate-200 text-primary font-semibold">
+            {/* <select onChange={filterCountry} id="select_country" className="p-1 bg-slate-200 text-primary font-semibold">
               <option disabled value="">Choose country</option>
               {tempPlaceholderCountries.map(country => <option key={country} value={country}>{country}</option>)}
-            </select>
+            </select> */}
           </div>
         </div>
       </div>

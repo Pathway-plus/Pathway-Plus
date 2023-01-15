@@ -63,7 +63,7 @@ const DetailItem = ({ label, value }: { label: string, value: string }) => {
     <li className="flex md:flex-row flex-col">
       <span className="flex md:flex-1 font-semibold md:font-normal">{label}</span>
       <div className="md:flex hidden mr-10 w-2 h-2 mt-2 rounded-xl bg-primary" />
-      <span className="flex flex-[1.5]">{value}</span>
+      <span className="flex flex-[1.5] text-sm md:text-base">{value}</span>
     </li>
   );
 };
