@@ -3,6 +3,7 @@ import type {NextPage } from "next";
 import { useEffect } from "react";
 import useVolunteers from "../../hooks/useVolunteers";
 
+
 const AboutUs:NextPage =() =>{
 
   const { loading, volunteers, getVolunteers } = useVolunteers();
@@ -24,6 +25,7 @@ const AboutUs:NextPage =() =>{
       </tr>
     );
   };
+
 
   return(
     <div>
@@ -118,6 +120,7 @@ const AboutUs:NextPage =() =>{
         <span className="-mt-12 float-left"><Image src={"/assets/about-us/leftTri.png"} width="50" height="100"></Image></span>
       </div>
 
+
       <div>
         <p className="px-5 mt-5 text-center font-semibold text-sm">Our Volunteers</p>
         <br />
@@ -141,7 +144,7 @@ const AboutUs:NextPage =() =>{
             </tbody>
           </table>
         </div>
-				<br />
+        <br />
       </div>
 
     </div>
