@@ -1,10 +1,25 @@
 import Image from "next/image";
-import type {NextPage } from "next";
+import type { NextPage } from "next";
 import { useEffect } from "react";
+import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+
 import useVolunteers from "../../hooks/useVolunteers";
 
+const timelineData = [
+  { month: "January", year: 2021, title: "Organisation Launch" },
+  { month: "June", year: 2021, title: "Production of Virtual Class" },
+  { month: "August", year: 2021, title: "Production of Virtual Event/Workshops" },
+  { month: "October", year: 2021, title: "Production of 1st Flagship Service: Consultation" },
+  { month: "January", year: 2022, title: "Production of 1st Flagship Service: Proofreading" },
+  { month: "March", year: 2022, title: "Operation Termination as Compass Learning Myanmar" },
+  { month: "April", year: 2022, title: "Operation Initiation as Pathway Plus" },
+  { month: "May", year: 2022, title: "Production of 2nd Flagship Service: PLUSXBEYOND: INDUSTRY TALK" },
+  { month: "June", year: 2022, title: "Crossed over 100 proofread documents" },
+  { month: "July", year: 2022, title: "Crossed over 300 consultation sessions" },
+];
 
-const AboutUs:NextPage =() =>{
+const AboutUs: NextPage = () => {
 
   const { loading, volunteers, getVolunteers } = useVolunteers();
   const volunteersData = loading ? [] : volunteers;
@@ -26,7 +41,6 @@ const AboutUs:NextPage =() =>{
     );
   };
 
-
   return(
     <div>
       <div className="group relative flex mb-4 justify-center">
@@ -36,11 +50,11 @@ const AboutUs:NextPage =() =>{
             <h1 className="text-l font-normal text-white my-2">Get to know more about us</h1>
             <h1 className="text-xl font-semibold text-orange-600 my-4">Who We Are</h1>
             <p className="text-white text-xs leading-5">
-		Pathway Plus is a fully youth-led non-profit-organization
+              Pathway Plus is a fully youth-led non-profit-organization
               <br/>
-		registered with the Ministery of Investment and Foreign
+              registered with the Ministery of Investment and Foreign
               <br/>
-		Economic Relations (MIFER)
+              Economic Relations (MIFER)
             </p>
           </div>
         </div>
@@ -57,11 +71,11 @@ const AboutUs:NextPage =() =>{
           <div className="flex float-right py-2 mr-6">
             <span className="relative float-left"><Image src={"/assets/about-us/Vector.png"} width="20" height="20"></Image></span>
             <span className="mx-2 float-right text-xs">
-			To empower Burmese youths by providing virtual
+              To empower Burmese youths by providing virtual
               <br />
-			academic consultations and career events regardless
+              academic consultations and career events regardless
               <br />
-			of race,religion,and ethnicity.
+              of race,religion,and ethnicity.
             </span>
 
           </div>
@@ -69,37 +83,37 @@ const AboutUs:NextPage =() =>{
           <div className="flex float-right py-2">
             <span className="relative float-left"><Image src={"/assets/about-us/Vector.png"} width="20" height="20"></Image></span>
             <span className="mx-2 float-right text-xs">
-			To establish the community not only to provide Burmese
+              To establish the community not only to provide Burmese
               <br />
-			youths through on-ground vocational training
+              youths through on-ground vocational training
               <br />
-			programmes,and academic and career-related-
+              programmes,and academic and career-related-
               <br />
-			programmes,but also to assists mid-career changes for
+              programmes,but also to assists mid-career changes for
               <br />
-			experienced employees in terms of training and academic
+              experienced employees in terms of training and academic
               <br />
-			programmes.
+              programmes.
             </span>
           </div>
 
           <div className="flex float-right py-2 mr-[5px]">
             <span className="relative float-left"><Image src={"/assets/about-us/Vector.png"} width="20" height="20"></Image></span>
             <span className="mx-2 float-right text-xs">
-				To undertake any research necessary to futher any of the
+              To undertake any research necessary to futher any of the
               <br />
-				objects specified above
+              objects specified above
             </span>
           </div>
 
           <div className="flex float-right py-2 mr-6">
             <span className="relative float-left"><Image src={"/assets/about-us/Vector.png"} width="20" height="20"></Image></span>
             <span className="mx-2 float-right text-xs">
-				To do all such other lawful things as are incidental or
+              To do all such other lawful things as are incidental or
               <br />
-				conducive to the attainment of any or all of the above
+              conducive to the attainment of any or all of the above
               <br />
-				objects.
+              objects.
             </span>
           </div>
         </div>
@@ -114,12 +128,26 @@ const AboutUs:NextPage =() =>{
 
       <div className="mt-5">
 
-        <p className="px-24 text-center font-semibold text-sm">Where We Start</p>
-
+        <p className="px-24 mb-6 text-center font-semibold text-sm">Where We Start</p>
         <span className="-mt-12 float-right"><Image src={"/assets/about-us/rightTri.png"} width="50" height="100"></Image></span>
         <span className="-mt-12 float-left"><Image src={"/assets/about-us/leftTri.png"} width="50" height="100"></Image></span>
-      </div>
 
+        <div className="px-20">
+          <VerticalTimeline lineColor="#d2d2d2">
+            {timelineData.map((item) => {
+              return <VerticalTimelineElement
+                key={item.title}
+                icon={<div className="w-1/2 h-1/2 rounded-full bg-primary" />}
+                iconStyle={{ marginTop: 50, color: "#F65A06", boxShadow: "none", borderWidth: 3, borderColor: "#F65A06", alignItems: "center", justifyContent: "center", display: "flex" }}
+                contentStyle={{boxShadow: "none"}}>
+                <p>{`${item.month} ${item.year}`}</p>
+                <p className="text-primary">{item.title}</p>
+              </VerticalTimelineElement>;
+            })}
+          </VerticalTimeline>
+        </div>
+
+      </div>
 
       <div>
         <p className="px-5 mt-5 text-center font-semibold text-sm">Our Volunteers</p>
