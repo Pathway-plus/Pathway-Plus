@@ -149,6 +149,9 @@ const AboutUs: NextPage = () => {
 
       </div>
 
+	  <span className="-mt-12 float-right"><Image src={"/assets/about-us/bottomR.png"} width="50" height="100"></Image></span>
+        <span className="-mt-12 float-left"><Image src={"/assets/about-us/bottomL.png"} width="50" height="100"></Image></span>
+
       <div>
         <p className="px-5 mt-5 text-center font-semibold text-sm">Our Volunteers</p>
         <br />
