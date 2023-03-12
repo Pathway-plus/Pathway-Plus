@@ -169,6 +169,10 @@ function SessionCard({ session, selected, setSelected } : { session: Session, se
   const dayString = date.toLocaleDateString("en-US", { weekday: "short" });
   const time = `${session.start_time} - ${session.end_time}`;
 
+  function changeSelected() {
+    setSelected(session._id);
+  }
+
   return (
     <div onClick={changeSelected} className={`min-w-[45%] w-48 p-4 cursor-pointer text-xs text-gray-500 space-y-3 border-2 rounded-md ${selectedStyle}`}>
       <p className={`flex flex-row items-center ${selectedStyle}`}>

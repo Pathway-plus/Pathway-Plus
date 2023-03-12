@@ -56,11 +56,10 @@ function Card({ data } : { data: AvailableEvent }) {
         <p className="cursor-pointer hover:text-primary">Register Now</p>
         <p className="flex items-center cursor-pointer hover:text-primary">
             Read More
-            <BsArrowRight className="ml-1"/>
-          </p>
-        </div>
+          <BsArrowRight className="ml-1"/>
+        </p>
       </div>
-    </Link>
+    </div>
   );
 }
 

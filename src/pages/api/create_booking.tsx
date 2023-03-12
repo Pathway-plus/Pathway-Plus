@@ -6,7 +6,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   const date = new Date(body.date);
   const dateString = date.toLocaleDateString("en-US", { month: "long", day: "numeric" });
   const dayString = date.toLocaleDateString("en-US", { weekday: "long" });
-  const time = `${body.startTime[0]} ${body.startTime[1]} - ${body.endTime[0]} ${body.endTime[1]}`;
+  const time = `${body.start_time} - ${body.end_time}`;
 
   // Implement backend booking system before sending email
   // makeBooking();
