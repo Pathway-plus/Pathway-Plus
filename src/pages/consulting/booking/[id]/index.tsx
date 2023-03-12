@@ -15,7 +15,7 @@ type ServerSideProps = {
 export const getServerSideProps : GetServerSideProps<ServerSideProps> = async (context) => {
   const id = context.query.id as unknown as string;
   try {
-    const response = await fetch(`${process.env.API_URL}/consultant/${id}/sessions`, { method: "GET" });
+    const response = await fetch(`${process.env.API_URL}/consultingsessions/sessionsofconsultant/${id}`, { method: "GET" });
     if (response.status < 200 || response.status >= 400) return { notFound: true };
     const responseData = await response.json();
     return { props: { sessions: responseData, id } };
@@ -167,11 +167,7 @@ function SessionCard({ session, selected, setSelected } : { session: Session, se
   const date = new Date(session.date);
   const dateString = date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
   const dayString = date.toLocaleDateString("en-US", { weekday: "short" });
-  const time = `${session.startTime[0]} ${session.startTime[1]} - ${session.endTime[0]} ${session.endTime[1]}`;
-
-  function changeSelected() {
-    setSelected(session._id);
-  }
+  const time = `${session.start_time} - ${session.end_time}`;
 
   return (
     <div onClick={changeSelected} className={`min-w-[45%] w-48 p-4 cursor-pointer text-xs text-gray-500 space-y-3 border-2 rounded-md ${selectedStyle}`}>

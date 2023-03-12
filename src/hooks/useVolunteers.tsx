@@ -18,13 +18,13 @@ export default function useVolunteers() {
     try {
       filters.limit = filters.limit ?? 6; // default limit is 6
       const queries = objToQuery(filters);
-      const response = await fetch(`${process.env.API_URL}/volunteer/all?${queries}`, { method: "GET" });
+      const response = await fetch(`${process.env.API_URL}/volunteers/page/${filters.page}?${queries}`, { method: "GET" });
       if (response.status < 200 || response.status >= 500) {
         setLoading(false);
         return false;
       }
       const responseData = await response.json();
-      setVolunteers(responseData);
+      setVolunteers(responseData.volunteers);
       setTotalPages(responseData.totalPages);
       setLoading(false);
       return true;

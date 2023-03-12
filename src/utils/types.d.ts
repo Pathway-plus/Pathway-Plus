@@ -1,37 +1,45 @@
 interface Consultant {
   "_id": string,
   "name": string,
-  "profile": string,
-  "country": string,
+  "email": string,
   "university": string,
-  "major": string,
-  "year": string,
-  "introduction": string,
-  "type": string,
-  "__v": number,
+  "specialization": string,
+  "year": number,
+  "country": string,
+  "bio": string,
 }
 
 interface Session {
-  "_id": string
-  "date": string
-  "startTime": Array<string>,
-  "endTime": Array<string>,
-  "is_available": boolean,
+  "_id": string,
   "consultant": string,
-  "weekly": boolean,
-  "__v": number,
+  "available": boolean,
+  "date": Date,
+  "start_time": string,
+  "end_time": string,
+  "createdAt": Date,
+  "updatedAt": Date,
 }
 
 interface Volunteer {
 	"_id": string;
+  "id": string;
 	"name": string;
-	"role": { name: string };
-	"department": { name: string };
-	"duration": string;
+	"position": string;
+	"department": string;
+	"startDate": string;
 }
 
 interface AvailableEvent {
-  [key: string]: any;
+  "_id": string;
+  "name": string;
+  "organizer": string;
+  "date": Date;
+  "time": string;
+  "venue": string;
+  "description": string;
+  "registerlink": string;
+  "createdAt": Date;
+  "updatedAt": Date;
 }
 
 interface Careers {

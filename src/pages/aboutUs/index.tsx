@@ -28,15 +28,24 @@ const AboutUs: NextPage = () => {
     getVolunteers();
   }, []);
 
+  function calcDuration(volunteer: Volunteer) {
+    const startDate = new Date(volunteer.startDate.replaceAll("-", "/"));
+    const nowDate = new Date();
+    let months;
+    months = (nowDate.getFullYear() - startDate.getFullYear()) * 12;
+    months = months - startDate.getMonth() + nowDate.getMonth();
+    return months;
+  }
+
   const VolunteerRow = ({ index, volunteer }: { index: number; volunteer: Volunteer }) => {
     return (
       <tr className="border-2 h-10 text-slate-600">
         <td></td>
         <td className="px-4">{index + 1}</td>
         <td>{volunteer.name}</td>
-        <td>{volunteer.role.name}</td>
-        <td>{volunteer.department.name}</td>
-        <td>{volunteer.duration}</td>
+        <td>{volunteer.position}</td>
+        <td>{volunteer.department}</td>
+        <td>{calcDuration(volunteer) + " months"}</td>
       </tr>
     );
   };
