@@ -188,7 +188,7 @@ const CardImage= ({ data } : { data: Consultant }) => {
       <Link href={{ pathname: `/consulting/${data._id}` }} passHref>
         <div className="p-5">
           <div className="mb-2 text-xs text-gray-900 dark:text-gray">{data.name}</div>
-          <div className="mb-3 text-2xs text-gray-700 dark:text-gray">{data.major}</div>
+          <div className="mb-3 text-2xs text-gray-700 dark:text-gray">{data.specialization}</div>
         </div>
       </Link>
     </div>

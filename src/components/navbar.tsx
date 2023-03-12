@@ -87,10 +87,10 @@ const navbar: React.FC = () => {
                     <Link href="/consulting">Consultation</Link>
                   </li>
                   <li className="dropdown-items">
-                    <Link href="#">Proofreading</Link>
+                    <Link href="/proofreading">Proofreading</Link>
                   </li>
                   <li className="dropdown-items">
-                    <Link href="#">Events</Link>
+                    <Link href="/events">Events</Link>
                   </li>
                 </ul>
               </div>

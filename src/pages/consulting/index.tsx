@@ -93,7 +93,7 @@ const Card = ({ data } : { data: Consultant }) => {
         <ul className="flex-1 w-10/12 space-y-1 list-disc">
           <li>{data.country}</li>
           <li>{data.university}</li>
-          <li>{data.major}</li>
+          <li>{data.specialization}</li>
         </ul>
         <Link href={{ pathname: `/consulting/booking/${data._id}` }}>
           <button className="w-28 py-3 rounded-lg text-white bg-primary-light hover:bg-primary shadow-default hover:shadow-shrink transition-all">

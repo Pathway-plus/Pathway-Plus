@@ -28,15 +28,24 @@ const AboutUs: NextPage = () => {
     getVolunteers();
   }, []);
 
+  function calcDuration(volunteer: Volunteer) {
+    const startDate = new Date(volunteer.startDate.replaceAll("-", "/"));
+    const nowDate = new Date();
+    let months;
+    months = (nowDate.getFullYear() - startDate.getFullYear()) * 12;
+    months = months - startDate.getMonth() + nowDate.getMonth();
+    return months;
+  }
+
   const VolunteerRow = ({ index, volunteer }: { index: number; volunteer: Volunteer }) => {
     return (
       <tr className="border-2 h-10 text-slate-600">
         <td></td>
         <td className="px-4">{index + 1}</td>
         <td>{volunteer.name}</td>
-        <td>{volunteer.role.name}</td>
-        <td>{volunteer.department.name}</td>
-        <td>{volunteer.duration}</td>
+        <td>{volunteer.position}</td>
+        <td>{volunteer.department}</td>
+        <td>{calcDuration(volunteer) + " months"}</td>
       </tr>
     );
   };
@@ -149,8 +158,8 @@ const AboutUs: NextPage = () => {
 
       </div>
 
-	  <span className="-mt-12 float-right"><Image src={"/assets/about-us/bottomR.png"} width="50" height="100"></Image></span>
-        <span className="-mt-12 float-left"><Image src={"/assets/about-us/bottomL.png"} width="50" height="100"></Image></span>
+      <span className="-mt-12 float-right"><Image src={"/assets/about-us/bottomR.png"} width="50" height="100"></Image></span>
+      <span className="-mt-12 float-left"><Image src={"/assets/about-us/bottomL.png"} width="50" height="100"></Image></span>
 
       <div>
         <p className="px-5 mt-5 text-center font-semibold text-sm">Our Volunteers</p>

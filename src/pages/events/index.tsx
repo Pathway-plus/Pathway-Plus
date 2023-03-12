@@ -3,12 +3,12 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 
-import useConsultants from "../../hooks/useConsultants";
+import useEvents from "../../hooks/useEvents";
 
 const skeletonData = [{}, {}, {}] as AvailableEvent[];
 
 export default function EventPage() {
-  const { loading, totalPages, consultants: events, getConsultants: getEvents } = useConsultants();
+  const { loading, totalPages, events, getEvents } = useEvents();
 
   const eventsData = loading ? skeletonData : events;
   const noEventsFound = events.length === 0 && loading === false;
@@ -43,7 +43,7 @@ export default function EventPage() {
         </div>
       </div>
 
-      <div className="flex flex-wrap mb-16 justify-center">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-x-6  ">
         {noEventsFound
           ? <p className="py-36">No consultants found...</p>
           : (eventsData).map((data, index) => (
@@ -55,18 +55,21 @@ export default function EventPage() {
 }
 
 const Card = ({ data } : { data: AvailableEvent }) => {
+  const options: Intl.DateTimeFormatOptions = { weekday: "long", day: "numeric", month: "numeric", year: "numeric" };
+  const date = new Date(data.date);
+
   return (
-    <div className="group flex flex-col flex-1 min-w-[340px] max-w-[33vw] shrink p-3 mr-8 mb-8 last:mr-0 gap-y-4 items-center rounded-lg shadow-default hover:shadow-expand active:shadow-shrink transition-all">
+    <div className="group flex flex-col flex-1 p-3 mb-8 last:mr-0 gap-y-4 items-center rounded-lg shadow-default hover:shadow-expand active:shadow-shrink transition-all">
       <div className="transition-transform relative w-full h-36">
         {/* <Image src={"/assets/events.png"} layout="fill" alt={`Picture of ${data.name}`} className="object-cover" /> */}
         <div className="bg-black w-full h-full rounded-lg" />
       </div>
-      <p className="text-lg font-semibold">Study Medicine in Italy</p>
+      <p className="text-lg font-semibold">{data.name}</p>
       <div className="self-start text-sm text-gray-text space-y-1">
-        <p className="mb-2">Organizer: Pathway Plus</p>
-        <p>Venue: Online</p>
-        <p>Date: Monday, 17/10/2022</p>
-        <p>Time: 7:00PM (Myanmar Time)</p>
+        <p className="mb-2">{`Organizer: ${data.organizer}`}</p>
+        <p>{`Venue: ${data.venue}`}</p>
+        <p>{`Date: ${date.toLocaleDateString("en-US", options)}`}</p>
+        <p>{`Time: ${data.time} (Myanmar Time)`}</p>
       </div>
       <div className="flex w-full justify-between text-primary-light text-sm font-semibold">
         <p className="cursor-pointer hover:text-primary">Register Now</p>
