@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 
 const skeletonData = [{}, {}, {}] as AvailableEvent[];
 
-const Consulting: NextPage = () => {
+const EventsAll: NextPage = () => {
   const router = useRouter();
   const [page, setPage] = useState(1);
   const { loading, totalPages, events, getEvents } = useEvents();
@@ -56,11 +56,11 @@ function Card({ data } : { data: AvailableEvent }) {
         <p className="cursor-pointer hover:text-primary">Register Now</p>
         <p className="flex items-center cursor-pointer hover:text-primary">
             Read More
-          <BsArrowRight className="ml-1"/>
-        </p>
+            <BsArrowRight className="ml-1"/>
+          </p>
+        </div>
       </div>
-    </div>
-
+    </Link>
   );
 }
 
@@ -89,4 +89,4 @@ const PageNavigation = ({ currentPage, totalPages, setPage }: { currentPage:numb
   );
 };
 
-export default Consulting;
+export default EventsAll;

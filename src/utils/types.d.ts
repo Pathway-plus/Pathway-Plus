@@ -41,3 +41,17 @@ interface AvailableEvent {
   "createdAt": Date;
   "updatedAt": Date;
 }
+
+interface Careers {
+  [key: string]: any;
+}
+
+interface BookingForm {
+  name: string;
+  email: string;
+  facebook: string;
+  age: string;
+  phone: string;
+  education: string;
+  purpose: string;
+}
